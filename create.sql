@@ -1,11 +1,22 @@
 -- ENTIDADES FUERTES --
 
 CREATE TABLE Variedad(
-    v_id          VARCHAR(255)    PRIMARY KEY,
-    v_nom         VARCHAR(255)    NOT NULL,
+    v_id          VARCHAR(255)  PRIMARY KEY,
+    v_nom         VARCHAR(255)  NOT NULL,
     v_maduracion  VARCHAR(255),
-    v_paisorigen  VARCHAR(255)    NOT NULL,
-    v_desc        VARCHAR(255)    NOT NULL,
+    v_paisorigen  VARCHAR(255)  NOT NULL,
+    v_desc        VARCHAR(255),
+    CONSTRAINT    chk_v         CHECK 
+    (
+        v_maduracion IN 
+        (
+            'Extra-temprana',
+            'Temprana',
+            'Media Estación',
+            'Tardía',
+            'Extra-tardía'
+        )
+    ),
 );
 CREATE TABLE Pais(
     pais_id         VARCHAR(255)    PRIMARY KEY,
@@ -41,6 +52,7 @@ CREATE TABLE Productor(
     fk_p_asoc   VARCHAR(255),
     fk_p_ciu    VARCHAR(255)    NOT NULL,
     FOREIGN KEY fk_p_ciu        REFERENCES  Ciudad(ciu_id)
+    CONSTRAINT  chk_prod_asoc   CHECK (p_envase in ('Bolsa', 'Caja', 'Mallas', 'Cajones'))
 );
 CREATE TABLE Cultivo(
     cult_id         VARCHAR(255),
@@ -58,7 +70,7 @@ CREATE TABLE Cultivo(
 CREATE TABLE Produccion(
     prod_id         VARCHAR(255),
     prod_year       DATE            NOT NULL,
-    prod_logradakg  numeric         NOT NULL,
+    prod_logradakg  NUMERIC         NOT NULL,
     fk_prod_v       VARCHAR(255)    NOT NULL,
     fk_prod_cult    VARCHAR(255)    NOT NULL,
     PRIMARY KEY     (prod_id, fk_prod_v, fk_prod_cult),
@@ -144,7 +156,7 @@ CREATE TABLE Cliente(
     cli_rangoinf    VARCHAR(255)    NOT NULL,
     cli_aceptacion  SMALLINT        NOT NULL,
     FOREIGN KEY     fk_cli_ciu      REFERENCES  Ciudad(ciu_id),
-    CONSTRAINT      chk_cliente     CHECK (cli_tipo IN ('natural', 'juridico'))
+    CONSTRAINT      chk_cliente     CHECK (cli_tipo IN ('Natural', 'Juridico'))
 );
 CREATE TABLE Forma_Pago(
     fp_id           VARCHAR(255),
@@ -173,7 +185,7 @@ CREATE TABLE Contrato(
     FOREIGN KEY         fk_cont_cli     REFERENCES  Cliente(cli_id),
     FOREIGN KEY         fk_cont_p       REFERENCES  Productor(p_id),
     FOREIGN KEY         fk_forma_pago   REFERENCES  Forma_Pago(fp_id),
-    CONSTRAINT          chk_contrato    CHECK (cont_status IN ('pendiente', 'pagado'))
+    CONSTRAINT          chk_contrato    CHECK (cont_status IN ('Pendiente', 'Pagado'))
 );
 CREATE TABLE Renovacion(
     ren_id          SERIAL,
@@ -254,7 +266,7 @@ CREATE TABLE Resultado_Eval_Anual(
     PRIMARY KEY     (rea_year, fk_rea_cli),
     FOREIGN KEY     fk_rea_cli          REFERENCES  Cliente(cli_id),
     CONSTRAINT      chk_rea_porc        CHECK (rea_porc >= 0 AND rea_porc <= 100),
-    CONSTRAINT      chk_rea_decision    CHECK (rea_decision IN ('aceptado', 'rechazado'))
+    CONSTRAINT      chk_rea_decision    CHECK (rea_decision IN ('Aceptado', 'Rechazado'))
 );
 CREATE TABLE Receta(
     rec_id          VARCHAR(255)    PRIMARY KEY,
