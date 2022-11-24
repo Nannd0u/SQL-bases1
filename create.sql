@@ -63,6 +63,20 @@ CREATE TABLE Ciudad(
     PRIMARY KEY (ciu_id, fk_ciu_pais),
     FOREIGN KEY fk_ciu_pais     REFERENCES  Pais(pais_id)
 );
+CREATE TABLE Region(
+    reg_id      VARCHAR(255),
+    reg_nom     VARCHAR(255)    NOT NULL,
+    fk_reg_pais VARCHAR(255)    NOT NULL,
+    PRIMARY KEY (reg_id, fk_reg_pais),
+    FOREIGN KEY fk_reg_pais     REFERENCES  Pais(pais_id)
+);
+CREATE TABLE Asociacion(
+    asoc_id     VARCHAR(255)    PRIMARY KEY,
+    asoc_nom    VARCHAR(255)    NOT NULL,
+    asoc_dir    VARCHAR(255)    NOT NULL,
+    fk_asoc_reg VARCHAR(255)    NOT NULL,
+    FOREIGN KEY fk_asoc_reg     REFERENCES  Region(reg_id)
+);
 CREATE TABLE Productor(
     p_id        VARCHAR(255)    PRIMARY KEY,
     p_nom       VARCHAR(255)    NOT NULL,
@@ -71,7 +85,9 @@ CREATE TABLE Productor(
     fk_p        VARCHAR(255),
     fk_p_asoc   VARCHAR(255),
     fk_p_ciu    VARCHAR(255)    NOT NULL,
-    FOREIGN KEY fk_p_ciu        REFERENCES  Ciudad(ciu_id)
+    FOREIGN KEY fk_p            REFERENCES  Productor(p_id),
+    FOREIGN KEY fk_p_asoc       REFERENCES  Asociacion(p_id),
+    FOREIGN KEY fk_p_ciu        REFERENCES  Ciudad(ciu_id),
     CONSTRAINT  chk_prod_asoc   CHECK (p_envase in ('Bolsa', 'Caja', 'Mallas', 'Cajones'))
 );
 CREATE TABLE Cultivo(
@@ -96,20 +112,6 @@ CREATE TABLE Produccion(
     PRIMARY KEY     (prod_id, fk_prod_v, fk_prod_cult),
     FOREIGN KEY     fk_prod_v       REFERENCES  Variedad(v_id),
     FOREIGN KEY     fk_prod_cult    REFERENCES  Cultivo(cult_id)    
-);
-CREATE TABLE Region(
-    reg_id      VARCHAR(255),
-    reg_nom     VARCHAR(255)    NOT NULL,
-    fk_reg_pais VARCHAR(255)    NOT NULL,
-    PRIMARY KEY (reg_id, fk_reg_pais),
-    FOREIGN KEY fk_reg_pais     REFERENCES  Pais(pais_id)
-);
-CREATE TABLE Asociacion(
-    asoc_id     VARCHAR(255)    PRIMARY KEY,
-    asoc_nom    VARCHAR(255)    NOT NULL,
-    asoc_dir    VARCHAR(255)    NOT NULL,
-    fk_asoc_reg VARCHAR(255)    NOT NULL,
-    FOREIGN KEY fk_asoc_reg     REFERENCES  Region(reg_id)
 );
 CREATE TABLE Proveedor(
     prov_id         VARCHAR(255)    PRIMARY KEY,
