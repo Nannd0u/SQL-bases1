@@ -71,33 +71,76 @@ INSERT INTO Pais VALUES
 ('pais28','Noruega','Europa');
 
 INSERT INTO Variable VALUES();
-INSERT INTO Ingrediente VALUES();
+
+INSERT INTO Ingrediente VALUES
+('ing1','Cereza(s)'),
+('ing2','Queso(s)'),
+('ing3','Canela(s)'),
+('ing4','Chocolate'),
+('ing5','Coco(s)'),
+('ing6','Crema(s)'),
+('ing7','Jalea'),
+('ing8','Azucar'),
+('ing9','Gelatina(s)'),
+('ing10','Yogur'),
+('ing11','Huevo(s)'),
+('ing12','Leche(s)'),
+('ing13','Limón(es)'),
+('ing14','Mantequilla(s)'),
+('ing15','Mermelada(s)'),
+('ing16','Nuez(es)');
+('ing17','Vainilla(s)'),
+('ing18','Zanahoria(s)');
 
 -- ENTIDADES DEBILES --
 
 INSERT INTO Ciudad VALUES();
+
 INSERT INTO Productor VALUES
 ('1','American River Cherry Company','2240 Dias Drive, Placerville, CA', 'Caja');
+
 INSERT INTO Cultivo VALUES();
+
 INSERT INTO Produccion VALUES();
+
 INSERT INTO Region VALUES();
+
 INSERT INTO Asociacion VALUES();
+
 INSERT INTO Proveedor VALUES();
+
 INSERT INTO Padrino VALUES();
+
 INSERT INTO Apadrinamiento VALUES();
+
 INSERT INTO P_Prod VALUES();
+
 INSERT INTO Convenio VALUES();
+
 INSERT INTO Cliente VALUES();
+
 INSERT INTO Forma_Pago VALUES();
+
 INSERT INTO Contrato VALUES();
+
 INSERT INTO Renovacion VALUES();
+
 INSERT INTO Pago VALUES();
+
 INSERT INTO Formula VALUES();
+
 INSERT INTO Detalle_V VALUES();
+
 INSERT INTO Envio VALUES();
+
 INSERT INTO Precio_Promedio VALUES();
+
 INSERT INTO Resultado_Eval_Anual VALUES();
+
 INSERT INTO Receta VALUES();
+
 INSERT INTO Elaboracion VALUES();
+
 INSERT INTO Ingrediente_Receta VALUES();
+
 INSERT INTO V_Receta VALUES();
