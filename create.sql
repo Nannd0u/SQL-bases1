@@ -40,6 +40,14 @@ CREATE TABLE Variable(
     var_nom         VARCHAR(255)    NOT NULL,
     var_desc        VARCHAR(255)    NOT NULL,
     var_tipo        VARCHAR(255)    NOT NULL
+    CONSTRAINT      chk_tipo        CHECK 
+    (
+        var_tipo IN 
+        (
+            'Cualitativa',
+            'Cuantitativa'
+        )
+    ),
 );
 CREATE TABLE Ingrediente(
     ing_id         VARCHAR(255)    PRIMARY KEY,
