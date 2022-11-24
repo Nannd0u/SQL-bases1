@@ -70,7 +70,10 @@ INSERT INTO Pais VALUES
 ('pais27','Nueva Zelanda','Oceania'),
 ('pais28','Noruega','Europa');
 
-INSERT INTO Variable VALUES();
+INSERT INTO Variable VALUES
+('var1','Positivo','total de elecciones positivas','Cuantitativa'),
+('var2','Negativo','total de elecciones negativas','Cuantitativa'),
+('var3','Total','substraccion de los resultados positivos y negativos','Cuantitativa');
 
 INSERT INTO Ingrediente VALUES
 ('ing1','Cereza(s)'),
@@ -84,12 +87,12 @@ INSERT INTO Ingrediente VALUES
 ('ing9','Gelatina(s)'),
 ('ing10','Yogur'),
 ('ing11','Huevo(s)'),
-('ing12','Leche(s)'),
-('ing13','Limón(es)'),
-('ing14','Mantequilla(s)'),
-('ing15','Mermelada(s)'),
+('ing12','Leche'),
+('ing13','Limon(es)'),
+('ing14','Mantequilla'),
+('ing15','Mermelada'),
 ('ing16','Nuez(es)');
-('ing17','Vainilla(s)'),
+('ing17','Vainilla'),
 ('ing18','Zanahoria(s)');
 
 -- ENTIDADES DEBILES --
