@@ -39,7 +39,37 @@ INSERT INTO Variedad VALUES
 ('v32','Pico Negro','Extra-tardia','España'),
 ('v32','Pico Colorado','Extra-tardia','España'),
 ('v32','Regina','Alemania');
-INSERT INTO Pais VALUES();
+
+INSERT INTO Pais VALUES
+('pais1','Iran','Asia'),
+('pais2','EEUU','America del Norte'),
+('pais3','Turquia','Asia'),
+('pais4','Italia','Europa'),
+('pais5','Alemania','Europa'),
+('pais6','España','Europa'),
+('pais7','Libano','Asia'),
+('pais8','Rumania','Europa'),
+('pais9','Francia','Europa'),
+('pais10','Federacion Rusa','Europa y Asia'),
+('pais11','Grecia','Europa'),
+('pais12','Siria','Asia'),
+('pais13','Chile','America del Sur'),
+('pais14','Austria','Europa'),
+('pais15','Republica Checa','Europa'),
+('pais16','Canada','America del Norte'),
+('pais17','Argentina','America del Sur'),
+('pais18','Australia','Oceania'),
+('pais19','Belgica','Europa'),
+('pais20','Bulgaria','Europa'),
+('pais21','Colombia','America del Sur'),
+('pais22','Chipre','Asia'),
+('pais23','Hungria','Europa'),
+('pais24','Israel','Asia'),
+('pais25','Marruecos','Africa'),
+('pais26','Paises Bajos','Europa'),
+('pais27','Nueva Zelanda','Oceania'),
+('pais28','Noruega','Europa');
+
 INSERT INTO Variable VALUES();
 INSERT INTO Ingrediente VALUES();
 
