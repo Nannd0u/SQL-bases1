@@ -21,7 +21,19 @@ CREATE TABLE Variedad(
 CREATE TABLE Pais(
     pais_id         VARCHAR(255)    PRIMARY KEY,
     pais_nom        VARCHAR(255)    NOT NULL,
-    pais_continente VARCHAR(255)    NOT NULL
+    pais_continente VARCHAR(255)    NOT NULL,
+    CONSTRAINT      chk_continente  CHECK 
+    (
+        pais_continente IN 
+        (
+            'Asia',
+            'America del Norte',
+            'America del Sur',
+            'Europa',
+            'Europa y Asia',
+            'Africa'
+        )
+    ),
 );
 CREATE TABLE Variable(
     var_id          VARCHAR(255)    PRIMARY KEY,
