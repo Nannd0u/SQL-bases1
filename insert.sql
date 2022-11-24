@@ -97,16 +97,25 @@ INSERT INTO Ingrediente VALUES
 
 -- ENTIDADES DEBILES --
 
-INSERT INTO Ciudad VALUES();
+INSERT INTO Ciudad VALUES
+('ciu1','Placerville','EEUU'),
+('ciu2','Prescott','EEUU'),
+('ciu3','Vignola','Italia'),
+('ciu4',"Anzola dell'Emilia",'Italia')
 
 INSERT INTO Productor VALUES
-('1','American River Cherry Company','2240 Dias Drive, Placerville, CA', 'Caja');
+('1','American River Cherry Company','2240 Dias Drive', 'Caja','EEUU');
 
 INSERT INTO Cultivo VALUES();
 
 INSERT INTO Produccion VALUES();
 
-INSERT INTO Region VALUES();
+INSERT INTO Region VALUES
+('reg1','California','EEUU'),
+('reg2','Washington','EEUU'),
+('reg3','Modena','Italia'),
+('reg4','Bologna','Italia');
+
 
 INSERT INTO Asociacion VALUES();
 
