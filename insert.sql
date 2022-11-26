@@ -101,10 +101,29 @@ INSERT INTO Ciudad VALUES
 ('ciu1','Placerville','EEUU'),
 ('ciu2','Prescott','EEUU'),
 ('ciu3','Vignola','Italia'),
-('ciu4',"Anzola dell'Emilia",'Italia')
+('ciu4',"Anzola dell'Emilia",'Italia'),
+('ciu5','Granada','Italia'),
+('ciu6','Sevilla','España'),
+('ciu7','Santiago','Chile'),
+('ciu8','Concepcion','Chile'),
+('ciu9','Saint-Laurent','Canada'),
+('ciu10','Niza','Francia'),
+('ciu11','Bahnhofstraße','Alemania'),
+('ciu12','Trelew','Argentina');
 
 INSERT INTO Productor VALUES
-('1','American River Cherry Company','2240 Dias Drive', 'Caja','EEUU');
+('p1','American River Cherry Company','2240 Dias Dr.', 'Caja','EEUU'),
+('p2','FirstFruit Farms LLC','1111 Fishhook Park Rd.', 'Caja','EEUU'),
+('p3','Azienda Agricola Amidei Bettino','Via Pratomavore 6/A','Italia'),
+('p4','Fabbri 1905','Via Emilia Ponente 276','Italia'),
+('p5','Maitena del Genil','C. Grajilla','España'),
+('p6','Bernardo Herrera','C. Barcelona','España'),
+('p7','Subsole','C. Luis Pasteur 5655','Chile'),
+('p8','Fistur','Av. Arturo Prat 199','Chile'),
+('p9','Agrocan Foods','176 Rue Benjamin Hudon','Canada'),
+('p10','La Source Aux Fruits','Rue Saint-Augustin 06200','Francia'),
+('p11','Spreewaldhof','Bahnhofstraße 1','Alemania'),
+('p12','Cerezas de la Patagonia','Av. Lezama 1227','Argentina');
 
 INSERT INTO Cultivo VALUES();
 
@@ -114,8 +133,15 @@ INSERT INTO Region VALUES
 ('reg1','California','EEUU'),
 ('reg2','Washington','EEUU'),
 ('reg3','Modena','Italia'),
-('reg4','Bologna','Italia');
-
+('reg4','Bologna','Italia'),
+('reg5','Granada','Italia'),
+('reg6','Sevilla','España'),
+('reg7','Santiago','Chile'),
+('reg8','Biobio','Chile'),
+('reg9','Quebec','Canada'),
+('reg10','Provenza-Alpes-Costa Azul','Francia'),
+('reg11','Norte Rine-Westfalia','Alemania'),
+('reg12','Chubut','Argentina');
 
 INSERT INTO Asociacion VALUES();
 
