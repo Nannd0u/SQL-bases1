@@ -98,50 +98,55 @@ INSERT INTO Ingrediente VALUES
 -- ENTIDADES DEBILES --
 
 INSERT INTO Ciudad VALUES
-('ciu1','Placerville','EEUU'),
-('ciu2','Prescott','EEUU'),
-('ciu3','Vignola','Italia'),
-('ciu4',"Anzola dell'Emilia",'Italia'),
-('ciu5','Granada','Italia'),
-('ciu6','Sevilla','España'),
-('ciu7','Santiago','Chile'),
-('ciu8','Concepcion','Chile'),
-('ciu9','Saint-Laurent','Canada'),
-('ciu10','Niza','Francia'),
-('ciu11','Bahnhofstraße','Alemania'),
-('ciu12','Trelew','Argentina');
+('ciu1','Placerville','pais2'),
+('ciu2','Prescott','pais2'),
+('ciu3','Vignola','pais4'),
+('ciu4',"Anzola dell'Emilia",'pais4'),
+('ciu5','Granada','pais4'),
+('ciu6','Sevilla','pais6'),
+('ciu7','Santiago','pais13'),
+('ciu8','Concepcion','pais13'),
+('ciu9','Saint-Laurent','pais16'),
+('ciu10','Niza','pais9'),
+('ciu11','Bahnhofstraße','pais5'),
+('ciu12','Trelew','Argentina'),
+('ciu13','Traverse City','pais2'),
+('ciu14','Elk Rapids','pais2'),
+('ciu15','Hamburgo','pais5'),
+('ciu16','Napoles','pais4');
 
 INSERT INTO Productor VALUES
-('p1','American River Cherry Company','2240 Dias Dr.', 'Caja','EEUU'),
-('p2','FirstFruit Farms LLC','1111 Fishhook Park Rd.', 'Caja','EEUU'),
-('p3','Azienda Agricola Amidei Bettino','Via Pratomavore 6/A','Italia'),
-('p4','Fabbri 1905','Via Emilia Ponente 276','Italia'),
-('p5','Maitena del Genil','C. Grajilla','España'),
-('p6','Bernardo Herrera','C. Barcelona','España'),
-('p7','Subsole','C. Luis Pasteur 5655','Chile'),
-('p8','Fistur','Av. Arturo Prat 199','Chile'),
-('p9','Agrocan Foods','176 Rue Benjamin Hudon','Canada'),
-('p10','La Source Aux Fruits','Rue Saint-Augustin 06200','Francia'),
-('p11','Spreewaldhof','Bahnhofstraße 1','Alemania'),
-('p12','Cerezas de la Patagonia','Av. Lezama 1227','Argentina');
+('p1','American River Cherry Company','2240 Dias Dr.', 'Caja','pais2'),
+('p2','FirstFruit Farms LLC','1111 Fishhook Park Rd.', 'Caja','pais2'),
+('p3','Azienda Agricola Amidei Bettino','Via Pratomavore 6/A','pais4'),
+('p4','Fabbri 1905','Via Emilia Ponente 276','pais4'),
+('p5','Maitena del Genil','C. Grajilla','pais6'),
+('p6','Bernardo Herrera','C. Barcelona','pais6'),
+('p7','Subsole','C. Luis Pasteur 5655','pais13'),
+('p8','Fistur','Av. Arturo Prat 199','pais13'),
+('p9','Agrocan Foods','176 Rue Benjamin Hudon','pais16'),
+('p10','La Source Aux Fruits','Rue Saint-Augustin 06200','pais9'),
+('p11','Spreewaldhof','Bahnhofstraße 1','pais5'),
+('p12','Cerezas de la Patagonia','Av. Lezama 1227','pais17');
 
 INSERT INTO Cultivo VALUES();
 
 INSERT INTO Produccion VALUES();
 
 INSERT INTO Region VALUES
-('reg1','California','EEUU'),
-('reg2','Washington','EEUU'),
-('reg3','Modena','Italia'),
-('reg4','Bologna','Italia'),
-('reg5','Granada','Italia'),
-('reg6','Sevilla','España'),
-('reg7','Santiago','Chile'),
-('reg8','Biobio','Chile'),
-('reg9','Quebec','Canada'),
-('reg10','Provenza-Alpes-Costa Azul','Francia'),
-('reg11','Norte Rine-Westfalia','Alemania'),
-('reg12','Chubut','Argentina');
+('reg1','California','pais2'),
+('reg2','Washington','pais2'),
+('reg3','Modena','pais4'),
+('reg4','Bologna','pais4'),
+('reg5','Granada','pais4'),
+('reg6','Sevilla','pais6'),
+('reg7','Santiago','pais13'),
+('reg8','Biobio','pais13'),
+('reg9','Quebec','pais16'),
+('reg10','Provenza-Alpes-Costa Azul','pais9'),
+('reg11','Norte Rine-Westfalia','pais5'),
+('reg12','Chubut','Argentina'),
+('reg13','Michigan','pais2');
 
 INSERT INTO Asociacion VALUES();
 
@@ -155,7 +160,11 @@ INSERT INTO P_Prod VALUES();
 
 INSERT INTO Convenio VALUES();
 
-INSERT INTO Cliente VALUES();
+INSERT INTO Cliente VALUES
+('cli1','Benjamin Twiggs','Juridico','1213 East Front Street','100','ciu13'),
+('cli2','Traverse Bay Farms','Juridico','204 River Street','90','ciu14'),
+('cli3','Edeka','Juridico','D-2297 Hamburgo','80','ciu15'),
+('cli4','La Distitalia SRL','Juridico','Giugliano in Campania','70','ciu16');
 
 INSERT INTO Forma_Pago VALUES();
 
