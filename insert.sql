@@ -109,7 +109,7 @@ INSERT INTO Ciudad VALUES
 ('ciu9','Saint-Laurent','pais16'),
 ('ciu10','Niza','pais9'),
 ('ciu11','Bahnhofstraße','pais5'),
-('ciu12','Trelew','Argentina'),
+('ciu12','Trelew','pais17'),
 ('ciu13','Traverse City','pais2'),
 ('ciu14','Elk Rapids','pais2'),
 ('ciu15','Hamburgo','pais5'),
@@ -145,7 +145,7 @@ INSERT INTO Region VALUES
 ('reg9','Quebec','pais16'),
 ('reg10','Provenza-Alpes-Costa Azul','pais9'),
 ('reg11','Norte Rine-Westfalia','pais5'),
-('reg12','Chubut','Argentina'),
+('reg12','Chubut','pais17'),
 ('reg13','Michigan','pais2');
 
 INSERT INTO Asociacion VALUES();
