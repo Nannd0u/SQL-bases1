@@ -174,9 +174,8 @@ CREATE TABLE Cliente(
     cli_nom         VARCHAR(255)    NOT NULL,
     cli_tipo        VARCHAR(255)    NOT NULL,
     cli_dir         VARCHAR(255)    NOT NULL,
-    cli_rangosup    VARCHAR(255)    NOT NULL,
-    cli_rangoinf    VARCHAR(255)    NOT NULL,
     cli_aceptacion  SMALLINT        NOT NULL,
+    fk_cli_ciu      VARCHAR(255)    NOT NULL,
     FOREIGN KEY     fk_cli_ciu      REFERENCES  Ciudad(ciu_id),
     CONSTRAINT      chk_cliente     CHECK (cli_tipo IN ('Natural', 'Juridico'))
 );
