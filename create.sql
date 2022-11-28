@@ -59,16 +59,16 @@ CREATE TABLE Ingrediente(
 -- ENTIDADES DEBILES --
 
 CREATE TABLE Ciudad(
-    ciu_id      VARCHAR(255),
+    ciu_id      VARCHAR(255)    UNIQUE,
     ciu_nom     VARCHAR(255)    NOT NULL,
     fk_ciu_pais VARCHAR(255)    NOT NULL,
     PRIMARY KEY (ciu_id, fk_ciu_pais),
     FOREIGN KEY (fk_ciu_pais)   REFERENCES  Pais(pais_id)
 );
 CREATE TABLE Region(
-    reg_id      VARCHAR(255),
+    reg_id      VARCHAR(255)    UNIQUE,
     reg_nom     VARCHAR(255)    NOT NULL,
-    fk_reg_pais VARCHAR(255)    NOT NULL,
+    fk_reg_pais VARCHAR(255)    NOT NULL    UNIQUE,
     PRIMARY KEY (reg_id, fk_reg_pais),
     FOREIGN KEY (fk_reg_pais)   REFERENCES  Pais(pais_id)
 );
@@ -88,12 +88,12 @@ CREATE TABLE Productor(
     fk_p_asoc   VARCHAR(255),
     fk_p_ciu    VARCHAR(255)    NOT NULL,
     FOREIGN KEY (fk_p)          REFERENCES  Productor(p_id),
-    FOREIGN KEY (fk_p_asoc)     REFERENCES  Asociacion(p_id),
+    FOREIGN KEY (fk_p_asoc)     REFERENCES  Asociacion(asoc_id),
     FOREIGN KEY (fk_p_ciu)      REFERENCES  Ciudad(ciu_id),
     CONSTRAINT  chk_prod_asoc   CHECK (p_envase in ('Bolsa', 'Caja', 'Mallas', 'Cajones'))
 );
 CREATE TABLE Cultivo(
-    cult_id         VARCHAR(255),
+    cult_id         VARCHAR(255)    UNIQUE,
     cult_calibre    VARCHAR(255)    NOT NULL,
     cult_prodanual  INT             NOT NULL,
     cult_periodoini DATE            NOT NULL,
@@ -103,7 +103,7 @@ CREATE TABLE Cultivo(
     fk_cult_p       VARCHAR(255)    NOT NULL,
     PRIMARY KEY     (cult_id, fk_cult_v, fk_cult_p),
     FOREIGN KEY     (fk_cult_v)     REFERENCES  Variedad(v_id),
-    FOREIGN KEY     (fk_cult_p)     REFERENCES  Productor(prod_id)
+    FOREIGN KEY     (fk_cult_p)     REFERENCES  Productor(p_id)
 );
 CREATE TABLE Produccion(
     prod_id         VARCHAR(255),
@@ -144,7 +144,7 @@ CREATE TABLE Apadrinamiento(
     FOREIGN KEY (fk_ap_p)       REFERENCES  Productor(p_id),
     FOREIGN KEY (fk_ap_v)       REFERENCES  Variedad(v_id)
 );
-CREATE TABLE P_Prod(
+CREATE TABLE P_Prov(
     fk_pp_p         VARCHAR(255)    NOT NULL,
     fk_pp_prov      VARCHAR(255)    NOT NULL,
     PRIMARY KEY     (fk_pp_p, fk_pp_prov),
@@ -162,9 +162,9 @@ CREATE TABLE Convenio(
     fk_pprod2       VARCHAR(255),
     PRIMARY KEY     (conv_id, fk_conv_prov),
     FOREIGN KEY     (fk_conv_asoc)  REFERENCES  Asociacion(asoc_id),
-    FOREIGN KEY     (fk_conv_pror)  REFERENCES  Proveedor(prov_id),
+    FOREIGN KEY     (fk_conv_prov)  REFERENCES  Proveedor(prov_id),
     FOREIGN KEY     (fk_pprod1, fk_pprod2)      
-        REFERENCES  P_Prov(fk_pprov_p, fk_pprov_prov),
+        REFERENCES  P_Prov(fk_pp_p, fk_pp_prov),
     CONSTRAINT      chk_convenio     CHECK 
     (
         CASE WHEN fk_conv_asoc IS NULL then fk_conv_prov IS NOT NULL
@@ -182,7 +182,7 @@ CREATE TABLE Cliente(
     CONSTRAINT      chk_cliente     CHECK (cli_tipo IN ('Natural', 'Juridico'))
 );
 CREATE TABLE Forma_Pago(
-    fp_id           VARCHAR(255),
+    fp_id           VARCHAR(255)    UNIQUE,
     fp_tipo         VARCHAR(255)    NOT NULL,
     fp_cant         MONEY           NOT NULL,
     fp_porc         SMALLINT        NOT NULL,
@@ -228,7 +228,7 @@ CREATE TABLE Pago(
     fk_pag_cont1    VARCHAR(255)    NOT NULL,
     fk_pag_cont2    VARCHAR(255)    NOT NULL,
     fk_pag_cont3    VARCHAR(255)    NOT NULL,
-    PRIMARY KEY     (pag_id, fk_pag_cont, fk_pag_cont2, fk_pag_cont3),
+    PRIMARY KEY     (pag_id, fk_pag_cont1, fk_pag_cont2, fk_pag_cont3),
     FOREIGN KEY     (fk_pag_cont1, fk_pag_cont2, fk_pag_cont3)
         REFERENCES  Contrato(cont_id, fk_cont_cli, fk_cont_p)
 );
