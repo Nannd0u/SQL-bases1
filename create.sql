@@ -1,4 +1,4 @@
-CREATE DATABASE Cerezas;
+-- CREATE DATABASE Cerezas;
 
 -- ENTIDADES FUERTES --
 
