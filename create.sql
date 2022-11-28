@@ -1,3 +1,5 @@
+CREATE DATABASE Cerezas;
+
 -- ENTIDADES FUERTES --
 
 CREATE TABLE Variedad(
