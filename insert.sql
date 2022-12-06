@@ -113,7 +113,16 @@ INSERT INTO Ciudad VALUES
 ('ciu13','Traverse City','pais2'),
 ('ciu14','Elk Rapids','pais2'),
 ('ciu15','Hamburgo','pais5'),
-('ciu16','Napoles','pais4');
+('ciu16','Napoles','pais4'),
+('ciu17','Pontevedra','pais6'),
+('ciu18','Pasadena','pais2'),
+('ciu19','Camporotondo','pais4'),
+('ciu20','Ferrara','pais4'),
+('ciu21','Arnissa','pais11'),
+('ciu22','Naousa','pais11'),
+('ciu23','Concordia','pais17'),
+('ciu24','Buenos Aires','pais17'),
+('ciu25','Cuijk','pais26');
 
 INSERT INTO Productor VALUES
 ('p1','American River Cherry Company','2240 Dias Dr.', 'Caja','pais2'),
@@ -182,15 +191,15 @@ INSERT INTO Asociacion VALUES
 ('asoc13','Michigan Fruit Growers Association','2240 Dias Dr.','reg13');
 
 INSERT INTO Proveedor VALUES
-('prov1','TC Fruits', 'Distribucion de frutas y hortalizas','36692 Barro-Pontevedra'),
-('prov2','AMS Export','Importacion-exportacion sector agricola','177 E Colorado Blvd #200'),
-('prov3','GI E GI DI V. GIUFFRIDA','Venta de especias','95040 Camporotondo Etneo'),
-('prov4','SOCIETA AGRICOLA SALVI VIVAI S.S.','Produccion de verduras y hortalizas','Via Bologna, 71444124 Ferrara'),
-('prov5','AGRICULTURAL CORPORATION OF VEGORITIDAS-VORAS','Mayorista de frutas','Arnissa-pellas 58002 Arnissa'),
-('prov6','MILIS FRUIT NUT NURSERY','Comercializacion de platos frutales','590 35 Naousa'),
-('prov7','Don Carmelo','Proveedor de frutas','3200 Concordia'),
-('prov8','DERCAM EXPORT IMPORT','Exportador de frutas y Hortalizas','2727 Buenos aires'),
-('prov9','KALKAN IMPORT EXPORT','Proveedor de frutas congeladas','5431 Cuijk');
+('prov1','TC Fruits', 'Distribucion de frutas y hortalizas','36692 Barro-Pontevedra','ciu17'),
+('prov2','AMS Export','Importacion-exportacion sector agricola','177 E Colorado Blvd #200','ciu18'),
+('prov3','GI E GI DI V. GIUFFRIDA','Venta de especias','95040 Camporotondo Etneo','ciu19'),
+('prov4','SOCIETA AGRICOLA SALVI VIVAI S.S.','Produccion de verduras y hortalizas','Via Bologna, 71444124 Ferrara','ciu20'),
+('prov5','AGRICULTURAL CORPORATION OF VEGORITIDAS-VORAS','Mayorista de frutas','Arnissa-pellas 58002 Arnissa','ciu21'),
+('prov6','MILIS FRUIT NUT NURSERY','Comercializacion de platos frutales','590 35 Naousa','ciu22'),
+('prov7','Don Carmelo','Proveedor de frutas','3200 Concordia','ciu23'),
+('prov8','DERCAM EXPORT IMPORT','Exportador de frutas y Hortalizas','2727 Buenos aires','ciu24'),
+('prov9','KALKAN IMPORT EXPORT','Proveedor de frutas congeladas','5431 Cuijk','ciu25');
 
 INSERT INTO Padrino VALUES
 ('pad1','Juan','Garcia','ciu1'),
@@ -243,48 +252,48 @@ INSERT INTO Cliente VALUES
 ('cli4','La Distitalia SRL','Juridico','Giugliano in Campania','70','ciu16');
 
 INSERT INTO Forma_Pago VALUES
-('fp1','contado','','','',''),
-('fp2','contado','','','',''),
-('fp3','contado','','','',''),
-('fp4','contado','','','',''),
-('fp5','cuota','5','10','',''),
-('fp6','cuota','8','13','',''),
-('fp7','cuota','12','17','',''),
-('fp8','cuota','3','5','',''),
-('fp9','contado','','','','');
+('fp1','Contado','','','10-FEB-2022','11-FEB-2022','p2'),
+('fp2','Contado','','','20-MAY-2012','22-MAY-2012','p3'),
+('fp3','Contado','','','30-JUL-2007','31-JUL-2007','p4'),
+('fp4','Contado','','','23-NOV-2017','24-NOV-2017','p5'),
+('fp5','Cuota','6700','10','','','p6'),
+('fp6','Cuota','17550','13','','','p7'),
+('fp7','Cuota','17000','17','','','p1'),
+('fp8','Cuota','49000','5','','','p8'),
+('fp9','Contado','','','5-DIC-2019','6-DIC-2019','p9');
 
 INSERT INTO Contrato VALUES
-('cont1','01-ENE-21','01-ENE-24','0','100000','maritimo','activo','cli1','p1','fp1'),
-('cont2','01-FEB-21','01-FEB-24','0','90000','maritimo','activo','cli2','p2','fp2'),
-('cont3','01-MAR-21','01-MAR-24','0','150000','maritimo','activo','cli3','p3','fp3'),
-('cont4','01-ABR-21','01-ABR-24','0','200000','maritimo','activo','cli4','p4','fp4'),
-('cont5','01-MAY-21','01-MAY-24','0','75000','maritimo','activo','cli1','p5','fp5'),
-('cont6','01-JUN-21','01-JUN-24','0','67000','maritimo','activo','cli2','p6','fp6'),
-('cont7','01-JUL-21','01-JUL-24','0','135000','maritimo','activo','cli3','p7','fp7'),
-('cont8','01-AGO-21','01-AGO-24','0','98000','maritimo','activo','cli4','p8','fp8'),
-('cont9','01-SEP-21','01-SEP-24','0','112000','maritimo','activo','cli1','p9','fp9');
+('cont1','01-ENE-21','01-ENE-24','0','100000','Terrestre','Activo','cli1','p1','fp1'),
+('cont2','01-FEB-22','01-FEB-25','0','90000','Terrestre','Activo','cli2','p2','fp2'),
+('cont3','01-MAR-12','01-MAR-15','0','150000','Aereo','Inactivo','cli3','p3','fp3'),
+('cont4','01-ABR-07','01-ABR-10','0','200000','Maritimo','Inactivo','cli4','p4','fp4'),
+('cont5','01-MAY-17','01-MAY-20','0','75000','Terrestre','Inactivo','cli1','p5','fp5'),
+('cont6','01-JUN-18','01-JUN-21','0','67000','Maritimo','Inactivo','cli2','p6','fp6'),
+('cont7','01-JUL-04','01-JUL-07','0','135000','Maritimo','Inactivo','cli3','p7','fp7'),
+('cont8','01-AGO-13','01-AGO-16','0','98000','Maritimo','Inactivo','cli4','p8','fp8'),
+('cont9','01-SEP-19','01-SEP-23','0','112000','Aereo','Activo','cli1','p9','fp9');
 
 INSERT INTO Renovacion VALUES
-('ren1','01-ENE-21','100000','cont1','cli1','p1'),
-('ren2','01-FEB-21','90000','cont2','cli2','p2'),
-('ren3','01-MAR-21','150000','cont3','cli3','p3'),
-('ren4','01-ABR-21','200000','cont4','cli4','p4'),
-('ren5','01-MAY-21','75000','cont5','cli1','p5'),
-('ren6','01-JUN-21','67000','cont6','cli2','p6'),
-('ren7','01-JUL-21','135000','cont7','cli3','p7'),
-('ren8','01-AGO-21','98000','cont8','cli4','p8'),
-('ren9','01-SEP-21','112000','cont9','cli1','p9');
+('ren1','01-ENE-2023','100000','cont1','cli1','p1'),
+('ren2','01-FEB-2024','90000','cont2','cli2','p2'),
+('ren3','01-MAR-2014','150000','cont3','cli3','p3'),
+('ren4','01-ABR-2009','200000','cont4','cli4','p4'),
+('ren5','01-MAY-2019','75000','cont5','cli1','p5'),
+('ren6','01-JUN-2020','67000','cont6','cli2','p6'),
+('ren7','01-JUL-2006','135000','cont7','cli3','p7'),
+('ren8','01-AGO-2015','98000','cont8','cli4','p8'),
+('ren9','01-SEP-2022','112000','cont9','cli1','p9');
 
 INSERT INTO Pago VALUES
-('pag1','01-ENE-21','100000','cont1','cli1','p1'),
-('pag2','01-FEB-21','90000','cont2','cli2','p2'),
-('pag3','01-MAR-21','150000','cont3','cli3','p3'),
-('pag4','01-ABR-21','200000','cont4','cli4','p4'),
-('pag5','01-MAY-21','75000','cont5','cli1','p5'),
-('pag6','01-JUN-21','67000','cont6','cli2','p6'),
-('pag7','01-JUL-21','135000','cont7','cli3','p7'),
-('pag8','01-AGO-21','98000','cont8','cli4','p8'),
-('pag9','01-SEP-21','112000','cont9','cli1','p9');
+('pag1','01-ENE-2021','100000','cont1','cli1','p1'),
+('pag2','01-FEB-2022','90000','cont2','cli2','p2'),
+('pag3','01-MAY-2012','150000','cont3','cli3','p3'),
+('pag4','01-JUL-2007','200000','cont4','cli4','p4'),
+('pag5','01-NOV-2017','75000','cont5','cli1','p5'),
+('pag6','01-JUN-2018','67000','cont6','cli2','p6'),
+('pag7','01-JUL-2004','135000','cont7','cli3','p7'),
+('pag8','01-AGO-2013','98000','cont8','cli4','p8'),
+('pag9','01-SEP-2019','112000','cont9','cli1','p9');
 
 INSERT INTO Formula VALUES();
 
