@@ -2,12 +2,12 @@
 
 INSERT INTO Variedad VALUES
 ('v1','Burlat','Temprana','Francia','referencia de maduracion para las otras variedades'),
-('v2','Cristobalina','Extra-temprana','España'),
-('v3','Primulat','Extra-temprana','Francia'),
-('v4','Nimba','Extra-temprana','Francia'),
-('v5','Early Bigi','Extra-temprana','Francia'),
-('v6','Early Lori','Extra-temprana','Francia'),
-('v7','Sweet Early','Extra-temprana','Italia'),
+('v2','Cristobalina','Extra-temprana','España',''),
+('v3','Primulat','Extra-temprana','Francia',''),
+('v4','Nimba','Extra-temprana','Francia',''),
+('v5','Early Bigi','Extra-temprana','Francia',''),
+('v6','Early Lori','Extra-temprana','Francia',''),
+('v7','Sweet Early','Extra-temprana','Italia',''),
 ('v8','Marvin','Temprana','EEUU','Edo. California'),
 ('v9','Royal Tioga','Temprana','EEUU','Edo. California'),
 ('v10','Pacific Red','Temprana','EEUU','Edo. California'),
@@ -15,30 +15,30 @@ INSERT INTO Variedad VALUES
 ('v12','Rochet','Temprana','EEUU','Edo. California'),
 ('v13','Royal Hazel','Temprana','EEUU','Edo. California'),
 ('v14','Rubi','Temprana','EEUU','Edo. California'),
-('v15','Early Red','Temprana','Canada'),
-('v16','Santina','Temprana','Canada'),
-('v17','Celeste','Temprana','Canada'),
-('v18','Sabrina','Temprana','Canada'),
-('v19','Carmen','Temprana','Hungria'),
-('v20','Grace Star','Media Estacion','Italia'),
-('v21','Cristalina','Media Estacion','Canada'),
-('v22','New Star','Media Estacion','Canada'),
-('v23','New Moon','Media Estacion','Canada'),
-('v24','Garnet','Media Estacion','EEUU'),
-('v25','Utha Giant','Media Estacion','EEUU'),
-('v26','Starking',,'Media Estacion','EEUU'),
-('v27','Vic','Tardia','Canada'),
-('v28','Sylvia','Tardia','Canada'),
-('v29','Sunburst','Tardia','Canada'),
-('v30','Sonata','Tardia','Canada'),
-('v31','Lapins','Tardia','Canada','variedad mas cultivada en el mundo')
-('v32','Napoleon','Tardia','Alemania'),
-('v32','Kordia','Tardia','Alemania'),
-('v32','Blanca de Provenza','Extra-tardia','Francia'),
-('v32','Ambrunes','Extra-tardia','España'),
-('v32','Pico Negro','Extra-tardia','España'),
-('v32','Pico Colorado','Extra-tardia','España'),
-('v32','Regina','Alemania');
+('v15','Early Red','Temprana','Canada',''),
+('v16','Santina','Temprana','Canada',''),
+('v17','Celeste','Temprana','Canada',''),
+('v18','Sabrina','Temprana','Canada',''),
+('v19','Carmen','Temprana','Hungria',''),
+('v20','Grace Star','Media Estacion','Italia',''),
+('v21','Cristalina','Media Estacion','Canada',''),
+('v22','New Star','Media Estacion','Canada',''),
+('v23','New Moon','Media Estacion','Canada',''),
+('v24','Garnet','Media Estacion','EEUU',''),
+('v25','Utha Giant','Media Estacion','EEUU',''),
+('v26','Starking','Media Estacion','EEUU',''),
+('v27','Vic','Tardia','Canada',''),
+('v28','Sylvia','Tardia','Canada',''),
+('v29','Sunburst','Tardia','Canada',''),
+('v30','Sonata','Tardia','Canada',''),
+('v31','Lapins','Tardia','Canada','variedad mas cultivada en el mundo'),
+('v32','Napoleon','Tardia','Alemania',''),
+('v33','Kordia','Tardia','Alemania',''),
+('v34','Blanca de Provenza','Extra-tardia','Francia',''),
+('v35','Ambrunes','Extra-tardia','España',''),
+('v36','Pico Negro','Extra-tardia','España',''),
+('v37','Pico Colorado','Extra-tardia','España',''),
+('v38','Regina','Extra-tardia','Alemania','');
 
 INSERT INTO Pais VALUES
 ('pais1','Iran','Asia'),
@@ -91,9 +91,11 @@ INSERT INTO Ingrediente VALUES
 ('ing13','Limon(es)'),
 ('ing14','Mantequilla'),
 ('ing15','Mermelada'),
-('ing16','Nuez(es)');
+('ing16','Nuez(es)'),
 ('ing17','Vainilla'),
-('ing18','Zanahoria(s)');
+('ing18','Zanahoria(s)'),
+('ing19','Tomate(s)'),
+('ing20','Cebolla(s)');
 
 -- ENTIDADES DEBILES --
 
@@ -101,7 +103,7 @@ INSERT INTO Ciudad VALUES
 ('ciu1','Placerville','pais2'),
 ('ciu2','Prescott','pais2'),
 ('ciu3','Vignola','pais4'),
-('ciu4',"Anzola dell'Emilia",'pais4'),
+('ciu4','Anzola dell Emilia','pais4'),
 ('ciu5','Granada','pais4'),
 ('ciu6','Sevilla','pais6'),
 ('ciu7','Santiago','pais13'),
@@ -123,42 +125,6 @@ INSERT INTO Ciudad VALUES
 ('ciu23','Concordia','pais17'),
 ('ciu24','Buenos Aires','pais17'),
 ('ciu25','Cuijk','pais26');
-
-INSERT INTO Productor VALUES
-('p1','American River Cherry Company','2240 Dias Dr.', 'Caja','pais2'),
-('p2','FirstFruit Farms LLC','1111 Fishhook Park Rd.', 'Caja','pais2'),
-('p3','Azienda Agricola Amidei Bettino','Via Pratomavore 6/A','pais4'),
-('p4','Fabbri 1905','Via Emilia Ponente 276','pais4'),
-('p5','Maitena del Genil','C. Grajilla','pais6'),
-('p6','Bernardo Herrera','C. Barcelona','pais6'),
-('p7','Subsole','C. Luis Pasteur 5655','pais13'),
-('p8','Fistur','Av. Arturo Prat 199','pais13'),
-('p9','Agrocan Foods','176 Rue Benjamin Hudon','pais16'),
-('p10','La Source Aux Fruits','Rue Saint-Augustin 06200','pais9'),
-('p11','Spreewaldhof','Bahnhofstraße 1','pais5'),
-('p12','Cerezas de la Patagonia','Av. Lezama 1227','pais17');
-
-INSERT INTO Cultivo VALUES
-('cult1','25','350', '15-ABR-22', '22-MAY-22','20','v2','p4'),
-('cult2','22','470', '30-MAR-22', '30-ABR-22','30','v3','p1'),
-('cult3','30','360', '27-MAY-22', '15-JUN-22','21','v5','p6'),
-('cult4','31','820', '21-MAR-22', '28-ABR-22','62','v6','p8'),
-('cult5','27','610', '17-MAY-22', '24-JUN-22','50','v8','p3'),
-('cult6','23','530', '03-ABR-22', '14-MAY-22','37','v1','p3'),
-('cult7','26','120', '01-JUN-22', '02-JUL-22','60','v9','p9'),
-('cult8','28','770', '11-MAY-22', '09-JUN-22','45','v12','p11'),
-('cult9','32','420', '06-ABR-22', '01-MAY-22','21','v22','p5');
-
-INSERT INTO Produccion VALUES
-('prod1','15-ABR-22','350','v2','cult1'),
-('prod2','30-MAR-22','470','v3','cult2'),
-('prod3','27-MAY-22','360','v5','cult3'),
-('prod4','21-MAR-22','820','v6','cult4'),
-('prod5','17-MAY-22','610','v8','cult5'),
-('prod6','03-ABR-22','530','v1','cult6'),
-('prod7','01-JUN-22','120','v9','cult7'),
-('prod8','11-MAY-22','770','v12','cult8'),
-('prod9','06-ABR-22','420','v22','cult9');
 
 INSERT INTO Region VALUES
 ('reg1','California','pais2'),
@@ -190,6 +156,42 @@ INSERT INTO Asociacion VALUES
 ('asoc12','Chubut Fruit Growers Association','Av. Lezama 1227','reg12'),
 ('asoc13','Michigan Fruit Growers Association','2240 Dias Dr.','reg13');
 
+INSERT INTO Productor VALUES
+('p1','American River Cherry Company','2240 Dias Dr.','Caja',NULL,'asoc1','ciu1'),
+('p2','FirstFruit Farms LLC','1111 Fishhook Park Rd.','Caja',NULL,'asoc2','ciu2'),
+('p3','Azienda Agricola Amidei Bettino','Via Pratomavore 6/A','Bolsa',NULL,'asoc3','ciu4'),
+('p4','Fabbri 1905','Via Emilia Ponente 276','Bolsa',NULL,'asoc4','ciu5'),
+('p5','Maitena del Genil','C. Grajilla','Mallas',NULL,NULL,'ciu6'),
+('p6','Bernardo Herrera','C. Barcelona','Mallas',NULL,NULL,'ciu6'),
+('p7','Subsole','C. Luis Pasteur 5655','Cajones',NULL,NULL,'ciu8'),
+('p8','Fistur','Av. Arturo Prat 199','Cajones',NULL,'asoc7','ciu7'),
+('p9','Agrocan Foods','176 Rue Benjamin Hudon','Caja',NULL,NULL,'ciu9'),
+('p10','La Source Aux Fruits','Rue Saint-Augustin 06200','Caja',NULL,NULL,'ciu10'),
+('p11','Spreewaldhof','Bahnhofstraße 1','Bolsa',NULL,'asoc11','ciu11'),
+('p12','Cerezas de la Patagonia','Av. Lezama 1227','Bolsa',NULL,NULL,'ciu12');
+
+INSERT INTO Cultivo VALUES
+('cult1','25','350', '', '','20','v2','p4'),
+('cult2','22','470', '', '','30','v3','p1'),
+('cult3','30','360', '', '','21','v5','p6'),
+('cult4','31','820', '', '','62','v6','p8'),
+('cult5','27','610', '', '','50','v8','p3'),
+('cult6','23','530', '', '','37','v1','p3'),
+('cult7','26','120', '', '','60','v9','p9'),
+('cult8','28','770', '', '','45','v12','p11'),
+('cult9','32','420', '', '','21','v22','p5');
+
+INSERT INTO Produccion VALUES
+('prod1','15-ABR-22','350','v2','cult1'),
+('prod2','30-MAR-22','470','v3','cult2'),
+('prod3','27-MAY-22','360','v5','cult3'),
+('prod4','21-MAR-22','820','v6','cult4'),
+('prod5','17-MAY-22','610','v8','cult5'),
+('prod6','03-ABR-22','530','v1','cult6'),
+('prod7','01-JUN-22','120','v9','cult7'),
+('prod8','11-MAY-22','770','v12','cult8'),
+('prod9','06-ABR-22','420','v22','cult9');
+
 INSERT INTO Proveedor VALUES
 ('prov1','TC Fruits', 'Distribucion de frutas y hortalizas','36692 Barro-Pontevedra','ciu17'),
 ('prov2','AMS Export','Importacion-exportacion sector agricola','177 E Colorado Blvd #200','ciu18'),
@@ -210,7 +212,7 @@ INSERT INTO Padrino VALUES
 ('pad6','Ana','Gomez','ciu6'),
 ('pad7','Pablo','Rodriguez','ciu7'),
 ('pad8','Sofia','Fernandez','ciu8'),
-('pad9','Miguel','Sanchez','ciu9'),
+('pad9','Miguel','Sanchez','ciu9');
 
 INSERT INTO Apadrinamiento VALUES
 ('17-MAY-22','17-MAY-25','100000','pad1','p1','v1'),
@@ -295,7 +297,7 @@ INSERT INTO Pago VALUES
 ('pag8','01-AGO-2013','98000','cont8','cli4','p8'),
 ('pag9','01-SEP-2019','112000','cont9','cli1','p9');
 
-INSERT INTO Formula VALUES();
+/*INSERT INTO Formula VALUES();*/
 
 INSERT INTO Detalle_V VALUES
 ('1','0','cont1','cli1','p1','cult1'),
@@ -338,7 +340,7 @@ INSERT INTO Envio VALUES
 ('env6','100','v6','cont6','cli2','p6','cult6'),
 ('env7','100','v7','cont7','cli3','p7','cult7'),
 ('env8','100','v8','cont8','cli4','p8','cult8'),
-('env9','100','v9','cont9','cli1','p9','cult9');
+('env9','100','v9','cont9','cli1','p9','cult9'); 
 
 INSERT INTO Precio_Promedio VALUES
 ('p1','01-ENE-21','01-ENE-24','100','1','v1','pais1'),
@@ -363,7 +365,7 @@ INSERT INTO Resultado_Eval_Anual VALUES
 ('2021','20','0.1','01-SEP-21','Aceptado','cli1');
 
 INSERT INTO Receta VALUES
-('rec1','receta1','tipo1','tiempo1','raciones1','autor1','cli1','p1'),
+('rec1','Gazpacho de Cerezas','Salada','00:10','6 personas','','cli1','p1'),
 ('rec2','receta2','tipo2','tiempo2','raciones2','autor2','cli2','p2'),
 ('rec3','receta3','tipo3','tiempo3','raciones3','autor3','cli3','p3'),
 ('rec4','receta4','tipo4','tiempo4','raciones4','autor4','cli4','p4'),
@@ -373,7 +375,11 @@ INSERT INTO Receta VALUES
 ('rec8','receta8','tipo8','tiempo8','raciones8','autor8','cli4','p8'),
 ('rec9','receta9','tipo9','tiempo9','raciones9','autor9','cli1','p9');
 
-INSERT INTO Elaboracion VALUES();
+INSERT INTO Elaboracion VALUES
+('elab1','Remojamos el pan troceado en el agua','rec1'),
+('elab2','Ponemos todos los ingredientes en la batidora','rec1'),
+('elab1','Paso1','rec2');
+
 
 INSERT INTO Ingrediente_Receta VALUES
 ('1','gramos','rec1','ing1'),
