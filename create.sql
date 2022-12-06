@@ -179,20 +179,21 @@ CREATE TABLE Cliente(
 CREATE TABLE Forma_Pago(
     fp_id           VARCHAR(255),
     fp_tipo         VARCHAR(255)    NOT NULL,
-    fp_cant         MONEY           NOT NULL,
-    fp_porc         SMALLINT        NOT NULL,
-    fp_cuota        SMALLINT        NOT NULL,
-    fp_emision      DATE            NOT NULL,
-    fp_envio        DATE            NOT NULL,
+    fp_cant         MONEY,
+    fp_porc         SMALLINT,
+    fp_cuota        SMALLINT,
+    fp_emision      DATE,
+    fp_envio        DATE,
     fk_fp_p         VARCHAR(255)    NOT NULL,
     PRIMARY KEY     (fp_id, fk_fp_p),
-    FOREIGN KEY     fk_fp_p         REFERENCES  Productor(p_id)
+    FOREIGN KEY     fk_fp_p         REFERENCES  Productor(p_id),
+    CONSTRAINT      chk_forma_pago  CHECK (fp_tipo IN ('Contado', 'Cuota'))
 );
 CREATE TABLE Contrato(
     cont_id             VARCHAR(255),
     cont_emision        DATE            NOT NULL,
     cont_vencimiento    DATE            NOT NULL,
-    cont_descuento      SMALLINT        NOT NULL,
+    cont_descuento      SMALLINT,
     cont_total          MONEY           NOT NULL,
     cont_transporte     VARCHAR(255)    NOT NULL,
     cont_status         VARCHAR(255)    NOT NULL,
@@ -203,7 +204,11 @@ CREATE TABLE Contrato(
     FOREIGN KEY         fk_cont_cli     REFERENCES  Cliente(cli_id),
     FOREIGN KEY         fk_cont_p       REFERENCES  Productor(p_id),
     FOREIGN KEY         fk_forma_pago   REFERENCES  Forma_Pago(fp_id),
-    CONSTRAINT          chk_contrato    CHECK (cont_status IN ('Activo', 'Inactivo'))
+    CONSTRAINT          chk_cont_status CHECK (cont_status IN ('Activo', 'Inactivo')),
+    CONSTRAINT          chk_cont_transporte     CHECK 
+    (
+        cont_transporte IN ('Aereo', 'Maritimo', 'Terrestre')
+    )
 );
 CREATE TABLE Renovacion(
     ren_id          SERIAL,
