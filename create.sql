@@ -239,8 +239,8 @@ CREATE TABLE Formula(
     fk_for_cli      VARCHAR(255)    NOT NULL,
     fk_for_var      VARCHAR(255)    NOT NULL,
     PRIMARY KEY     (for_id, fk_for_cli, fk_for_var),
-    FOREIGN KEY     (fk_for_cli)      REFERENCES  Cliente(cli_id),
-    FOREIGN KEY     (fk_for_var)      REFERENCES  Variable(var_id) 
+    FOREIGN KEY     (fk_for_cli)    REFERENCES  Cliente(cli_id),
+    FOREIGN KEY     (fk_for_var)    REFERENCES  Variable(var_id) 
 );
 CREATE TABLE Detalle_V(
     dv_cantidad     INT             NOT NULL,
@@ -316,7 +316,7 @@ CREATE TABLE Elaboracion(
     FOREIGN KEY     (fk_elab_rec)   REFERENCES  Receta(rec_id)
 );
 CREATE TABLE Ingrediente_Receta(
-    ir_cantidad     INT                 NOT NULL,
+    ir_cantidad     INT,
     ir_unidad       VARCHAR(255),
     fk_ir_rec       VARCHAR(255)        NOT NULL,
     fk_ir_ing       VARCHAR(255)        NOT NULL,
