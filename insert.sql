@@ -95,7 +95,15 @@ INSERT INTO Ingrediente VALUES
 ('ing17','Vainilla'),
 ('ing18','Zanahoria(s)'),
 ('ing19','Tomate(s)'),
-('ing20','Cebolla(s)');
+('ing20','Cebolla(s)'),
+('ing21','Pan'),
+('ing22','Aceite de oliva'),
+('ing23','Agua'),
+('ing24','Sal'),
+('ing25','Vinagre'),
+('ing26','Pimiento Verde'),
+('ing27','Miel'),
+('ing28','Pimienta'),
 
 -- ENTIDADES DEBILES --
 
@@ -251,7 +259,12 @@ INSERT INTO Cliente VALUES
 ('cli1','Benjamin Twiggs','Juridico','1213 East Front Street',100,'ciu13'),
 ('cli2','Traverse Bay Farms','Juridico','204 River Street',90,'ciu14'),
 ('cli3','Edeka','Juridico','D-2297 Hamburgo',80,'ciu15'),
-('cli4','La Distitalia SRL','Juridico','Giugliano in Campania',70,'ciu16');
+('cli4','La Distitalia SRL','Juridico','Giugliano in Campania',70,'ciu16'),
+('cli5','Aldi','Juridico','D-40878 Ratingen',60,'ciu17'),
+('cli6','Lidl','Juridico','D-40878 Ratingen',50,'ciu18'),
+('cli7','Carrefour','Juridico','D-40878 Ratingen',40,'ciu19'),
+('cli8','Mercadona','Juridico','D-40878 Ratingen',30,'ciu20'),
+('cli9','Dia','Juridico','D-40878 Ratingen',20,'ciu21');
 
 INSERT INTO Forma_Pago VALUES
 ('fp1','Contado',NULL,NULL,NULL,'2022-02-10','2022-02-11','p2'),
@@ -297,7 +310,8 @@ INSERT INTO Pago VALUES
 ('pag8','2013-08-01',98000,'cont8','cli4','p8'),
 ('pag9','2019-09-01',112000,'cont9','cli1','p9');
 
-INSERT INTO Formula VALUES();
+INSERT INTO Formula VALUES
+('for1','Numerica',100,'cli1','var3');
 
 INSERT INTO Detalle_V VALUES
 (1,0,'cont1','cli1','p1','cult1'),
@@ -366,39 +380,37 @@ INSERT INTO Resultado_Eval_Anual VALUES
 
 INSERT INTO Receta VALUES
 ('rec1','Gazpacho de Cerezas','Salada','00:10:00',6,NULL,'cli1',NULL),
-('rec2','receta2','tipo2','tiempo2',2,'autor2','cli2','p2'),
-('rec3','receta3','tipo3','tiempo3',3,'autor3','cli3','p3'),
-('rec4','receta4','tipo4','tiempo4',4,'autor4','cli4','p4'),
-('rec5','receta5','tipo5','tiempo5',5,'autor5','cli1','p5'),
-('rec6','receta6','tipo6','tiempo6',6,'autor6','cli2','p6'),
-('rec7','receta7','tipo7','tiempo7',7,'autor7','cli3','p7'),
-('rec8','receta8','tipo8','tiempo8',8,'autor8','cli4','p8'),
-('rec9','receta9','tipo9','tiempo9',9,'autor9','cli1','p9');
+('rec2','Crostini de Cerezas','Salada','00:30:00',10,NULL,'cli2',NULL),
+('rec3','Bocados de cereza y beicon','Salada','00:20:00',4,NULL,'cli3',NULL),
 
 INSERT INTO Elaboracion VALUES
-(1,'Remojamos el pan troceado en el agua','rec1'),
-(2,'Ponemos todos los ingredientes en la batidora','rec1'),
-(1,'Paso1','rec2');
+(1,'Remojamos el pan troceado en el agua,','rec1'),
+(2,'ponemos todos los ingredientes en la batidora,','rec1'),
+(3,'batimos hasta obtener una crema fina,','rec1'),
+(3,'pasamos el gazpacho por un colador bien fino','rec1'),
+(4,'probamos y rectificamos añadiendo mas agua de ser necesario','rec1'),
+(1,'Mezclar en un cuenco el vinagre con la miel y aceite de oliva, el pimenton,','rec2'),
+(2,'añadir las cerezas y mezclar bien, dejar marinar directamente.','rec2'),
+(3,'Calentar un sarten y ñadir las cerezas con toda la salsa, cocinar por 15 o 20 min,','rec2'),
+(4,'retirar cuando las cerezas esten tiernas y dejar enfirar.','rec2'),
+(1,'Deshuesar las cerezas, cortar las lonchas de beicon por la mitad,','rec3'),
+(2,'envolver cada cereza con una loncha de beicon,','rec3'),
+(3,'pinchar con un palillo y cocinar en el horno a 200ºC durante 15 minutos,','rec3'),
+(4,'retirar del horno y dejar enfriar.','rec3');
 
 INSERT INTO Ingrediente_Receta VALUES
-(1,'gr','rec1','ing1'),
-(2,'gr','rec2','ing2'),
-(3,'gr','rec3','ing3'),
-(4,'gr','rec4','ing4'),
-(5,'gr','rec5','ing5'),
-(6,'gr','rec6','ing6'),
-(7,'gr','rec7','ing7'),
-(8,'gr','rec8','ing8'),
-(9,'gr','rec9','ing9'),
-(10,'gr','rec1','ing10'),
-(11,'gr','rec2','ing11'),
-(12,'gr','rec3','ing12'),
-(13,'gr','rec4','ing13'),
-(14,'gr','rec5','ing14'),
-(15,'gr','rec6','ing15'),
-(16,'gr','rec7','ing16'),
-(17,'gr','rec8','ing17'),
-(18,'gr','rec9','ing18');
+(500,'gr','rec1','ing19'),
+(250.'gr','rec1','ing1'),
+(50,'gr','rec1','ing26'),
+(50,'gr','rec1','ing20'),
+(100,'ml','rec1','ing22'),
+(200,'ml','rec1','ing23'),
+(400,'gr','rec2','ing1'),
+(30,'ml','rec2','ing22'),
+(10,'ml','rec2','ing27'),
+(NULL,NULL,'rec2','ing28'),
+(NULL,NULL,'rec2','ing24'),
+(NULL,NULL,'rec2','ing23'),
 
 INSERT INTO V_Receta VALUES
 (80,'rec1','v1'),
