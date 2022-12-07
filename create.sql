@@ -211,7 +211,7 @@ CREATE TABLE Contrato(
     )
 );
 CREATE TABLE Renovacion(
-    ren_id          SERIAL,
+    ren_id          VARCHAR(255),
     ren_renovar     DATE            NOT NULL,
     ren_total       MONEY           NOT NULL,
     fk_ren_cont1    VARCHAR(255)    NOT NULL,
@@ -309,9 +309,10 @@ CREATE TABLE Receta(
     )
 );
 CREATE TABLE Elaboracion(
-    elab_paso       SMALLINT        PRIMARY KEY,
+    elab_paso       SMALLINT,
     elab_desc       VARCHAR(255)    NOT NULL,
     fk_elab_rec     VARCHAR(255)    NOT NULL,
+    PRIMARY KEY     (elab_paso, fk_elab_rec),  
     FOREIGN KEY     (fk_elab_rec)   REFERENCES  Receta(rec_id)
 );
 CREATE TABLE Ingrediente_Receta(
