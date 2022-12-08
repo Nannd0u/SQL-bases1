@@ -104,6 +104,13 @@ INSERT INTO Ingrediente VALUES
 ('ing26','Pimiento Verde'),
 ('ing27','Miel'),
 ('ing28','Pimienta'),
+('ing29','Harina'),
+('ing30','Vaina de Vainilla'),
+('ing31','Queso Crema'),
+('ing32','Leche Evaporada'),
+('ing33','Leche Condensada'),
+('ing34','Gelatina de cereza'),
+('ing35','Beicon');
 
 -- ENTIDADES DEBILES --
 
@@ -132,7 +139,11 @@ INSERT INTO Ciudad VALUES
 ('ciu22','Naousa','pais11'),
 ('ciu23','Concordia','pais17'),
 ('ciu24','Buenos Aires','pais17'),
-('ciu25','Cuijk','pais26');
+('ciu25','Cuijk','pais26'),
+('ciu26','Massy','pais9'),
+('ciu27','Valencia','pais6'),
+('ciu28','Essen','pais5'),
+('ciu29','Neckarsulm','pais5'),
 
 INSERT INTO Region VALUES
 ('reg1','California','pais2'),
@@ -190,15 +201,15 @@ INSERT INTO Cultivo VALUES
 ('cult9','32',420,'2019-04-21','2019-05-21',21,'v27','p5'); 
 
 INSERT INTO Produccion VALUES
-('prod1','2022-05-15',350,'v2','cult1'),
-('prod2','2022-05-15',470,'v3','cult2'),
-('prod3','2022-05-15',360,'v5','cult3'),
-('prod4','2022-05-15',820,'v6','cult4'),
-('prod5','2022-05-15',610,'v8','cult5'),
-('prod6','2022-05-15',530,'v1','cult6'),
-('prod7','2022-05-15',120,'v9','cult7'),
-('prod8','2022-05-15',770,'v12','cult8'),
-('prod9','2022-05-15',420,'v22','cult9');
+('prod1','2021-05-20',350,'v2','cult1'),
+('prod2','2025-03-20',470,'v3','cult2'),
+('prod3','2012-03-20',360,'v5','cult3'),
+('prod4','2007-04-01',820,'v6','cult4'),
+('prod5','2017-04-01',610,'v8','cult5'),
+('prod6','2018-04-01',530,'v1','cult6'),
+('prod7','2004-04-13',120,'v9','cult7'),
+('prod8','2013-04-13',770,'v12','cult8'),
+('prod9','2019-04-21',420,'v22','cult9');
 
 INSERT INTO Proveedor VALUES
 ('prov1','TC Fruits', 'Distribucion de frutas y hortalizas','36692 Barro-Pontevedra','ciu17'),
@@ -245,25 +256,25 @@ INSERT INTO P_Prov VALUES
 ('p9','prov9');
 
 INSERT INTO Convenio VALUES
-('conv1','descuento','2021-01-01','2024-01-01','asoc1',NULL,NULL),
-('conv2','descuento','2021-02-01','2024-02-01','asoc2',NULL,NULL),
-('conv3','descuento','2021-03-01','2024-03-01','asoc3',NULL,NULL),
-('conv4','descuento','2021-04-01','2024-04-01','asoc4',NULL,NULL),
-('conv5','descuento','2021-05-01','2024-05-01',NULL,'p2','prov2'),
-('conv6','descuento','2021-06-01','2024-06-01',NULL,'p6','prov6'),
-('conv7','descuento','2021-07-01','2024-07-01',NULL,'p7','prov7'),
-('conv8','descuento','2021-08-01','2024-08-01',NULL,'p8','prov8'),
-('conv9','descuento','2021-09-01','2024-09-01','asoc9',NULL,NULL);
+('conv1','descuento','2021-01-01','2021-01-01','asoc1',NULL,NULL),
+('conv2','descuento','2021-02-01','2022-02-01','asoc2',NULL,NULL),
+('conv3','descuento','2021-03-01','2012-03-01','asoc3',NULL,NULL),
+('conv4','descuento','2021-04-01','2007-04-01','asoc4',NULL,NULL),
+('conv5','descuento','2021-05-01','2017-05-01',NULL,'p2','prov2'),
+('conv6','descuento','2021-06-01','2018-06-01',NULL,'p6','prov6'),
+('conv7','descuento','2021-07-01','2004-07-01',NULL,'p7','prov7'),
+('conv8','descuento','2021-08-01','2013-08-01',NULL,'p8','prov8'),
+('conv9','descuento','2021-09-01','2019-09-01','asoc9',NULL,NULL);
 
 INSERT INTO Cliente VALUES
 ('cli1','Benjamin Twiggs','Juridico','1213 East Front Street',100,'ciu13'),
 ('cli2','Traverse Bay Farms','Juridico','204 River Street',90,'ciu14'),
 ('cli3','Edeka','Juridico','D-2297 Hamburgo',80,'ciu15'),
 ('cli4','La Distitalia SRL','Juridico','Giugliano in Campania',70,'ciu16'),
-('cli5','Aldi','Juridico','D-40878 Ratingen',60,'ciu17'),
-('cli6','Lidl','Juridico','D-40878 Ratingen',50,'ciu18'),
-('cli7','Carrefour','Juridico','D-40878 Ratingen',40,'ciu19'),
-('cli8','Mercadona','Juridico','D-40878 Ratingen',30,'ciu20'),
+('cli5','Aldi','Juridico','Steeler Str.',60,'ciu28'),
+('cli6','Lidl','Juridico','Neckarsulm Str.',50,'ciu29'),
+('cli7','Carrefour','Juridico','Rue Saint-Marc',40,'ciu26'),
+('cli8','Mercadona','Juridico','C. Valencia',30,'ciu27'),
 ('cli9','Dia','Juridico','D-40878 Ratingen',20,'ciu21');
 
 INSERT INTO Forma_Pago VALUES
@@ -282,36 +293,44 @@ INSERT INTO Contrato VALUES
 ('cont2','2022-02-01','2025-02-01',0,90000,'Terrestre','Activo','cli2','p2','fp2'),
 ('cont3','2012-03-01','2015-03-01',0,150000,'Aereo','Inactivo','cli3','p3','fp3'),
 ('cont4','2007-04-01','2010-04-01',0,200000,'Maritimo','Inactivo','cli4','p4','fp4'),
-('cont5','2017-05-01','2020-05-01',0,75000,'Terrestre','Inactivo','cli1','p5','fp5'),
-('cont6','2018-06-01','2021-06-01',0,67000,'Maritimo','Inactivo','cli2','p6','fp6'),
-('cont7','2004-07-01','2007-07-01',0,135000,'Maritimo','Inactivo','cli3','p7','fp7'),
-('cont8','2013-08-01','2016-08-01',0,98000,'Maritimo','Inactivo','cli4','p8','fp8'),
-('cont9','2019-09-01','2023-09-01',0,112000,'Aereo','Activo','cli1','p9','fp9');
+('cont5','2017-05-01','2020-05-01',0,75000,'Terrestre','Inactivo','cli5','p5','fp5'),
+('cont6','2018-06-01','2021-06-01',0,67000,'Maritimo','Inactivo','cli6','p6','fp6'),
+('cont7','2004-07-01','2007-07-01',0,135000,'Maritimo','Inactivo','cli7','p7','fp7'),
+('cont8','2013-08-01','2016-08-01',0,98000,'Maritimo','Inactivo','cli8','p8','fp8'),
+('cont9','2019-09-01','2023-09-01',0,112000,'Aereo','Activo','cli9','p9','fp9');
 
 INSERT INTO Renovacion VALUES
 ('ren1','2023-01-01',100000,'cont1','cli1','p1'),
 ('ren2','2024-02-01',90000,'cont2','cli2','p2'),
 ('ren3','2014-03-01',150000,'cont3','cli3','p3'),
 ('ren4','2009-04-01',200000,'cont4','cli4','p4'),
-('ren5','2019-05-01',75000,'cont5','cli1','p5'),
-('ren6','2020-06-01',67000,'cont6','cli2','p6'),
-('ren7','2006-07-01',135000,'cont7','cli3','p7'),
-('ren8','2015-08-01',98000,'cont8','cli4','p8'),
-('ren9','2022-09-01',112000,'cont9','cli1','p9');
+('ren5','2019-05-01',75000,'cont5','cli5','p5'),
+('ren6','2020-06-01',67000,'cont6','cli6','p6'),
+('ren7','2006-07-01',135000,'cont7','cli7','p7'),
+('ren8','2015-08-01',98000,'cont8','cli8','p8'),
+('ren9','2022-09-01',112000,'cont9','cli9','p9');
 
 INSERT INTO Pago VALUES
 ('pag1','2021-01-01',100000,'cont1','cli1','p1'),
 ('pag2','2022-02-01',90000,'cont2','cli2','p2'),
 ('pag3','2012-03-01',150000,'cont3','cli3','p3'),
 ('pag4','2007-04-01',200000,'cont4','cli4','p4'),
-('pag5','2017-05-01',75000,'cont5','cli1','p5'),
-('pag6','2018-06-01',67000,'cont6','cli2','p6'),
-('pag7','2004-07-01',135000,'cont7','cli3','p7'),
-('pag8','2013-08-01',98000,'cont8','cli4','p8'),
-('pag9','2019-09-01',112000,'cont9','cli1','p9');
+('pag5','2017-05-01',75000,'cont5','cli5','p5'),
+('pag6','2018-06-01',67000,'cont6','cli6','p6'),
+('pag7','2004-07-01',135000,'cont7','cli7','p7'),
+('pag8','2013-08-01',98000,'cont8','cli8','p8'),
+('pag9','2019-09-01',112000,'cont9','cli9','p9');
 
 INSERT INTO Formula VALUES
-('for1','Numerica',100,'cli1','var3');
+('for1','Numerica',100,'cli1','var3'),
+('for2','Numerica',98,'cli2','var3'),
+('for3','Numerica',80,'cli3','var3'),
+('for4','Numerica',81,'cli4','var3'),
+('for5','Numerica',77,'cli5','var3'),
+('for6','Numerica',100,'cli6','var3'),
+('for7','Numerica',90,'cli7','var3'),
+('for8','Numerica',60,'cli8','var3'),
+('for9','Numerica',79,'cli9','var3');
 
 INSERT INTO Detalle_V VALUES
 (1,0,'cont1','cli1','p1','cult1'),
@@ -357,38 +376,41 @@ INSERT INTO Envio VALUES
 ('env9',100,'v9','cont3','cli3','p3','cult7');  
 
 INSERT INTO Precio_Promedio VALUES
-('p1','2021-01-01','2024-01-01',100,'1','v1','pais1'),
-('p2','2021-02-01','2024-02-01',90,'1','v2','pais2'),
-('p3','2021-03-01','2024-03-01',80,'1','v3','pais3'),
-('p4','2021-04-01','2024-04-01',70,'1','v4','pais4'),
-('p5','2021-05-01','2024-05-01',60,'1','v5','pais5'),
-('p6','2021-06-01','2024-06-01',50,'1','v6','pais6'),
-('p7','2021-07-01','2024-07-01',40,'1','v7','pais7'),
-('p8','2021-08-01','2024-08-01',30,'1','v8','pais8'),
-('p9','2021-09-01','2024-09-01',20,'1','v9','pais9');
+('p1','2021-01-01','2024-01-01',6.75,'20 mm','v1','pais1'),
+('p2','2022-02-01','2025-02-01',6.80,'22 mm','v2','pais2'),
+('p3','2012-03-01','2015-03-01',5.98,'20 mm','v3','pais3'),
+('p4','2007-04-01','2010-04-01',5.80,'24 mm','v4','pais4'),
+('p5','2017-05-01','2020-05-01',6.10,'30 mm','v5','pais5'),
+('p6','2018-06-01','2021-06-01',6.13,'28 mm','v6','pais6'),
+('p7','2004-07-01','2007-07-01',5.60,'26 mm','v7','pais7'),
+('p8','2013-08-01','2016-08-01',6.00,'22 mm','v8','pais8'),
+('p9','2019-09-01','2022-09-01',6.62,'32 mm','v9','pais9');
 
 INSERT INTO Resultado_Eval_Anual VALUES
-(2021,100,10,'2021-01-01','Aceptado','cli1'),
-(2021,90,10,'2021-02-01','Rechazado','cli2'),
-(2021,80,10,'2021-03-01','Aceptado','cli3'),
-(2021,70,10,'2021-04-01','Rechazado','cli4'),
-(2022,60,10,'2021-05-01','Aceptado','cli1'),
-(2022,50,10,'2021-06-01','Rechazado','cli2'),
-(2022,40,10,'2021-07-01','Aceptado','cli3'),
-(2022,30,10,'2021-08-01','Rechazado','cli4'),
-(2012,20,10,'2021-09-01','Aceptado','cli1');
+(2021,100,10,'2021-12-01','Aceptado','cli1'),
+(2021,90,10,'2022-12-01','Rechazado','cli2'),
+(2021,80,10,'2013-02-01','Aceptado','cli3'),
+(2021,70,10,'2008-03-01','Rechazado','cli4'),
+(2022,60,10,'2018-04-01','Aceptado','cli1'),
+(2022,50,10,'2019-05-01','Rechazado','cli2'),
+(2022,40,10,'2005-06-01','Aceptado','cli3'),
+(2022,30,10,'2014-07-01','Rechazado','cli4'),
+(2012,20,10,'2020-08-01','Aceptado','cli1');
 
 INSERT INTO Receta VALUES
 ('rec1','Gazpacho de Cerezas','Salada','00:10:00',6,NULL,'cli1',NULL),
 ('rec2','Crostini de Cerezas','Salada','00:30:00',10,NULL,'cli2',NULL),
 ('rec3','Bocados de cereza y beicon','Salada','00:20:00',4,NULL,'cli3',NULL),
+('rec4','Tarta de cereza','Dulce','02:00:00',8,'Alfonso López','cli4',NULL),
+('rec5','Gelatina de Cereza','Dulce','02:30:00',1,NULL,'cli5',NULL),
+('rec6','Limonada de Cereza','Dulce','00:15:00',6,'Layla Pujol','cli6',NULL);
 
 INSERT INTO Elaboracion VALUES
 (1,'Remojamos el pan troceado en el agua,','rec1'),
 (2,'ponemos todos los ingredientes en la batidora,','rec1'),
 (3,'batimos hasta obtener una crema fina,','rec1'),
-(3,'pasamos el gazpacho por un colador bien fino','rec1'),
-(4,'probamos y rectificamos añadiendo mas agua de ser necesario','rec1'),
+(4,'pasamos el gazpacho por un colador bien fino','rec1'),
+(5,'probamos y rectificamos añadiendo mas agua de ser necesario','rec1'),
 (1,'Mezclar en un cuenco el vinagre con la miel y aceite de oliva, el pimenton,','rec2'),
 (2,'añadir las cerezas y mezclar bien, dejar marinar directamente.','rec2'),
 (3,'Calentar un sarten y ñadir las cerezas con toda la salsa, cocinar por 15 o 20 min,','rec2'),
@@ -396,11 +418,39 @@ INSERT INTO Elaboracion VALUES
 (1,'Deshuesar las cerezas, cortar las lonchas de beicon por la mitad,','rec3'),
 (2,'envolver cada cereza con una loncha de beicon,','rec3'),
 (3,'pinchar con un palillo y cocinar en el horno a 200ºC durante 15 minutos,','rec3'),
-(4,'retirar del horno y dejar enfriar.','rec3');
+(4,'retirar del horno y dejar enfriar.','rec3'),
+(1,'Lavar y deshuesar cerezas','rec4'),
+(2,'Colocar las cerezas deshuesadas en un bol y añadir azucar','rec4'),
+(3,'macerar las cerezas entre 8 y 12 horas en la nevera','rec4'),
+(4,'cortar mantequilla en cuadritos y se coloca en un bol','rec4'),
+(5,'se añade azucar,harina y sal, mezclar hasta formar una arena','rec4'),
+(6,'se añade agua y jugo de limon y se sigue mezclando hasta que la masa este homogenea','rec4'),
+(7,'Compactar la masa con las manos formando dos porciones, una para la base y otra para el enrejado','rec4'),
+(8,'Envolver las porciones en film transparente y se guarda durannte una hora enla nevera hasta que este duro','rec4'),
+(9,'se coloca la masa de la base de la tarta entre dos papeles de horno para evitar que se pegue','rec4'),
+(10,'estirar la mas hasta que quede entre 3 y 4 mm de espesor','rec4'),
+(11,'Colocar la masa en el molde de tarta manteniendo el papel de horno inferior para evitar que se pegue al molde','rec4'),
+(12,'la masa de la tarta debe sobre salir 0.5cm del molde','rec4'),
+(13,'rellenamos la tarta con el relleno y reservamos','rec4'),
+(14,'se extiende el segundo trozo de masa de la misma forma que el primero y se corta en tiras de 1 a 1.5 cm de ancho','rec4'),
+(15,'colcoar 4 tiras de un mismo sentido sobre la tarta y se continua con las tiras que van perpendiculares para realizar el enrejado','rec4'),
+(16,'se pinta la superficie de la tarta con huevo batido y se introduce en el horno','rec4'),
+(17,'Precalentar el horno a 190 grados C','rec4'),
+(18,'hornear la tarta solo cpn calor por debajo por 15 minutos','rec4'),
+(19,'luego se coloca el calor por arriba y abajo y se hornea por 45 minutoos mas','rec4'),
+(20,'una vez pasado los 45 minutos se retira del horno y se deja enfriar sin desolmda','rec4'),
+(21,'Al dejar enfriar se puede desmoldar y estaria lista','rec4'),
+(1,'Licua queso crema con leche evaporata,la leche condensada, las cerezas','rec5'),
+(2,'vierte dentro de un molde y refrigerar por 30 minutos','rec5'),
+(3,'colocar la gelatina de cereza sobre el mousse de cereza y refrigerar por 2 horas','rec5'),
+(1,'Colocar las cerezas limones azucar y 2 tazas de agua en la licuadora','rec6'),
+(2,'licuar los ingredientes hasta que esten bien triturados','rec6'),
+(3,'Colar la mezcla licuada y agregar agua','rec6'),
+(4,'Sirva la limonada de cereza con hielo en vasos','rec6');
 
 INSERT INTO Ingrediente_Receta VALUES
 (500,'gr','rec1','ing19'),
-(250.'gr','rec1','ing1'),
+(250,'gr','rec1','ing1'),
 (50,'gr','rec1','ing26'),
 (50,'gr','rec1','ing20'),
 (100,'ml','rec1','ing22'),
@@ -411,6 +461,26 @@ INSERT INTO Ingrediente_Receta VALUES
 (NULL,NULL,'rec2','ing28'),
 (NULL,NULL,'rec2','ing24'),
 (NULL,NULL,'rec2','ing23'),
+(24,NULL,'rec3','ing1'),
+(200,'gr','rec3','ing35'),
+(1,'kg','rec4','ing1'),
+(250,'gr','rec4','ing8'),
+(1,NULL,'rec4','ing30'),
+(530,'gr','rec4','ing29'),
+(250,'gr','rec4','ing14'),
+(3,'ml','rec4','ing13'),
+(10,'ml','rec4','ing23'),
+(2,'gr','rec4','ing24'),
+(1,NULL,'rec4','ing11'),
+(190,'gr','rec5','ing31'),
+(360,'gr','rec5','ing32'),
+(375,'gr','rec5','ing33'),
+(200,'gr','rec5','ing1'),
+(80,'gr','rec5','ing34'),
+(500,'gr','rec6','ing1'),
+(2,NULL,'rec6','ing11'),
+(240,'ml','rec6','ing23'),
+(150,'gr','rec6','ing8');
 
 INSERT INTO V_Receta VALUES
 (80,'rec1','v1'),
