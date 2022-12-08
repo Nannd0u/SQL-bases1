@@ -110,7 +110,13 @@ INSERT INTO Ingrediente VALUES
 ('ing32','Leche Evaporada'),
 ('ing33','Leche Condensada'),
 ('ing34','Gelatina de cereza'),
-('ing35','Beicon');
+('ing35','Beicon'),
+('ing36','Manteca'),
+('ing37','planchas de pasta brisa'),
+('ing38','Maicena'),
+('ing39','Concha de limon'),
+('ing40','Levadura'),
+('ing41','Masscarponne');
 
 -- ENTIDADES DEBILES --
 
@@ -403,7 +409,10 @@ INSERT INTO Receta VALUES
 ('rec3','Bocados de cereza y beicon','Salada','00:20:00',4,NULL,'cli3',NULL),
 ('rec4','Tarta de cereza','Dulce','02:00:00',8,'Alfonso López','cli4',NULL),
 ('rec5','Gelatina de Cereza','Dulce','02:30:00',1,NULL,'cli5',NULL),
-('rec6','Limonada de Cereza','Dulce','00:15:00',6,'Layla Pujol','cli6',NULL);
+('rec6','Limonada de Cereza','Dulce','00:15:00',6,'Layla Pujol','cli6',NULL),
+('rec7','Pie de Cereza','Dulce','00:45:00',6,'Rececatas','cli7',NULL),
+('rec8','Tartaletas de crema con salsa de cerezas','Dulce','00:30:00',6,'Marian_','cli8',NULL),
+('rec9','Cupcakes de cerezas','Dulce','00:40:00',6,'Marian_','cli9',NULL);
 
 INSERT INTO Elaboracion VALUES
 (1,'Remojamos el pan troceado en el agua,','rec1'),
@@ -446,7 +455,29 @@ INSERT INTO Elaboracion VALUES
 (1,'Colocar las cerezas limones azucar y 2 tazas de agua en la licuadora','rec6'),
 (2,'licuar los ingredientes hasta que esten bien triturados','rec6'),
 (3,'Colar la mezcla licuada y agregar agua','rec6'),
-(4,'Sirva la limonada de cereza con hielo en vasos','rec6');
+(4,'Sirva la limonada de cereza con hielo en vasos','rec6'),
+(1,'Tamiza la harina y la sal en un cuenco','rec7'),
+(2,'Corte la manteca y mantequilla en cuadrados y frotala con los dedos en la harina hasta formar migajas','rec7'),
+(3,'Rocie 2-3 cucharadas de agua y mezcla hasta hacer una bola, envuelve en papel film y refrigera minimo 30min','rec7'),
+(4,'Extiende dos tercios de la masa y recubre el molde ya preparado con la masa, recorta los bordes, introduce en la nevera 15min','rec7'),
+(5,'Pon la cerezas en un hueso junto con el azucar y harina (mas extracto si utilizas), mezcla y vierte sobre el molde','rec7'),
+(6,'Extiende el resto de masa y corta 8 tiras de 1 cm de ancho y dispongalas encima siguiendo un patron de entramado, recorte los bordes.','rec7'),
+(7,'Bate el huevo y glasea el enrejado y ayudese para unir las tiras con la masa.','rec7'),
+(8,'Hornee a 200ºC  40-45 min (a mi me a tardado 30min) hasta que la masa se dore.','rec7'),
+(9,'Sirva a temperatura ambiente o fria.','rec7'),
+(1,'Precalentar el horno a 180 grados.','rec8'),
+(2,'Con un corta pastas cortar discos mas grandes que la tartaleta,colocarlos pincharlos con un tenedor y hornear (unos 15 min).','rec8'),
+(3,'Lava y seca las cerezas,reservar unas pokas para decorar,deshuesarlas y trocearlas,mezclarlas con la mitad del azucar y cocerlas con medio vaso de agua unos 8 min, retirar del fuego y batirlo,reservar.','rec8'),
+(4,'Llevar a ebullicion la leche con el resto de azucar,la canela y la cascara de limon,retirar del fuego y tapar 5 min.','rec8'),
+(5,'Bate las yemas,echar la harina y la maicena y remover, verter la leche colada,y ponerlo al baño maria (10 min).','rec8'),
+(6,'Dejar enfriar la crema, rellenar las tartaletas,regar con la salsa x encima y colocar una cereza x cada tartaleta. ','rec8'),
+(1,'Limpiamos y deshuesamos las cerezas y las reservamos.','rec9'),
+(2,'Ponemos en un bol la mantequilla junto con el azúcar y batimos bien hasta que formen una crema. A continuación, añadimos los huevos de uno en uno batiendo hasta que se integren. Tamizamos la harina junto con la levadura y vamos agregándola poco a poco a la masa, batiendo bien cada vez. Cuando sea una masa homogénea, añadimos la leche y la esencia. En este caso usé aroma de azahar que tenía en casa para darle un toque diferente, pero se puede hacer con vainilla tranquilamente.','rec9'),
+(3,'Troceamos las cerezas y las agregamos a nuestra masa. Mezclamos bien con una espátula o cuchara de madera para que se repartan bien.','rec9'),
+(4,'Precalentamos el horno y mientras vamos preparando las cápsulas en el molde. Las llenamos hasta 2/3 de su capacidad y horneamos a 180ºC durante unos 20-25 minutos.','rec9'),
+(5,'Cuando estén listos los sacamos del horno, los dejamos templar 5 minutos y a continuación los sacamos y los dejamos enfriar en una rejilla.','rec9'),
+(6,'Mientras se enfrían, preparamos el frosting. La cantidad dependerá de cuántos cupcakes tengáis que decorar y de cuánta crema queráis ponerles encima. Pero la proporción que uso es siempre la misma: el doble de queso que de mantequilla. Y el azúcar...a ojo! Dependiendo del dulzor que tenga la magdalena o si le voy a poner algún otro sabor o algo.','rec9'),
+(7,'Batimos en un bol la mantequilla junto con el azúcar hasta que formen una crema y adquieran un tono más blanquecino. A continuación añadimos el queso y batimos hasta que quede homogéneo. Los decoramos al gusto y ya están! Disfrutar de ellos por que son un lujazo.','rec9');
 
 INSERT INTO Ingrediente_Receta VALUES
 (500,'gr','rec1','ing19'),
@@ -480,7 +511,33 @@ INSERT INTO Ingrediente_Receta VALUES
 (500,'gr','rec6','ing1'),
 (2,NULL,'rec6','ing11'),
 (240,'ml','rec6','ing23'),
-(150,'gr','rec6','ing8');
+(150,'gr','rec6','ing8'),
+(295,'gr','rec7','ing29'),
+(75,'gr','rec7','ing36'),
+(125,'gr','rec7','ing14'),
+(2,'gr','rec7','ing24'),
+(500,'gr','rec7','ing1'),
+(200,'gr','rec7','ing8'),
+(1,NULL,'rec7','ing11'),
+(1,NULL,'rec8','ing37'),
+(300,'gr','rec8','ing1'),
+(500,'ml','rec8','ing12'),
+(3,NULL,'rec8','ing11'),
+(500,'ml','rec8','ing12'),
+(6,'gr','rec8','ing29'),
+(10,'gr','rec8','ing38')
+(1,NULL,'rec8','ing3'),
+(1,NULL,'rec8','ing39'),
+(40,'gr','rec8','ing8'),
+(250,'gr','rec9','ing14'),
+(200,'gr','rec9','ing8'),
+(100,'gr','rec9','ing29'),
+(2,NULL,'rec9','ing11'),
+(8,'gr','rec9','ing40'),
+(60,'ml','rec9','ing12'),
+(100,'gr','rec9','ing1'),
+(200,'gr','rec9','ing41');
+
 
 INSERT INTO V_Receta VALUES
 (80,'rec1','v1'),
