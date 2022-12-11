@@ -1,5 +1,5 @@
 from django.db import models
-from productores.models import Asociacion, Ciudad, Cultivo, Pais
+from productores.models import Asociacion, Productor, Ciudad, Cultivo, Pais, PProv, Variedad
 
 # Create your models here.
 
@@ -12,7 +12,7 @@ class Convenio(models.Model):
     fk_conv_asoc = models.ForeignKey(
         Asociacion, models.DO_NOTHING, db_column='fk_conv_asoc', blank=True, null=True)
     fk_conv_pp1 = models.ForeignKey(
-        'PProv', models.DO_NOTHING, db_column='fk_conv_pp1', blank=True, null=True)
+        PProv, models.DO_NOTHING, db_column='fk_conv_pp1', blank=True, null=True)
     fk_conv_pp2 = models.IntegerField(blank=True, null=True)
 
     class Meta:
@@ -44,7 +44,7 @@ class FormaPago(models.Model):
     fp_emision = models.DateField(blank=True, null=True)
     fp_envio = models.DateField(blank=True, null=True)
     fk_fp_p = models.ForeignKey(
-        'Productor', models.DO_NOTHING, db_column='fk_fp_p')
+        Productor, models.DO_NOTHING, db_column='fk_fp_p')
 
     class Meta:
         managed = True
@@ -63,7 +63,7 @@ class Contrato(models.Model):
     fk_cont_cli = models.ForeignKey(
         Cliente, models.DO_NOTHING, db_column='fk_cont_cli')
     fk_cont_p = models.ForeignKey(
-        'Productor', models.DO_NOTHING, db_column='fk_cont_p')
+        Productor, models.DO_NOTHING, db_column='fk_cont_p')
     fk_forma_pago = models.ForeignKey(
         'FormaPago', models.DO_NOTHING, db_column='fk_forma_pago')
 
@@ -126,7 +126,7 @@ class Envio(models.Model):
     env_id = models.IntegerField(primary_key=True)
     env_cantidad = models.IntegerField()
     fk_env_v = models.ForeignKey(
-        'Variedad', models.DO_NOTHING, db_column='fk_env_v')
+        Variedad, models.DO_NOTHING, db_column='fk_env_v')
     fk_env_dv1 = models.ForeignKey(
         DetalleV, models.DO_NOTHING, db_column='fk_env_dv1')
     fk_env_dv2 = models.IntegerField()
@@ -147,7 +147,7 @@ class PrecioPromedio(models.Model):
     pro_precio = models.TextField()  # This field type is a guess.
     pro_calibre = models.CharField(max_length=255)
     fk_pro_v = models.ForeignKey(
-        'Variedad', models.DO_NOTHING, db_column='fk_pro_v')
+        Variedad, models.DO_NOTHING, db_column='fk_pro_v')
     fk_pro_pais = models.ForeignKey(
         Pais, models.DO_NOTHING, db_column='fk_pro_pais')
 

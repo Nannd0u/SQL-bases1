@@ -1,5 +1,5 @@
 from django.db import models
-from productores.models import Productor
+from productores.models import Productor, Variedad
 from transaccion.models import Cliente
 
 # Create your models here.
@@ -35,7 +35,7 @@ class Elaboracion(models.Model):
     elab_paso = models.SmallIntegerField(primary_key=True)
     elab_desc = models.CharField(max_length=255)
     fk_elab_rec = models.ForeignKey(
-        'Receta', models.DO_NOTHING, db_column='fk_elab_rec')
+        Receta, models.DO_NOTHING, db_column='fk_elab_rec')
 
     class Meta:
         managed = True
@@ -47,7 +47,7 @@ class IngredienteReceta(models.Model):
     ir_cantidad = models.IntegerField(blank=True, null=True)
     ir_unidad = models.CharField(max_length=255, blank=True, null=True)
     fk_ir_rec = models.OneToOneField(
-        'Receta', models.DO_NOTHING, db_column='fk_ir_rec', primary_key=True)
+        Receta, models.DO_NOTHING, db_column='fk_ir_rec', primary_key=True)
     fk_ir_ing = models.ForeignKey(
         Ingrediente, models.DO_NOTHING, db_column='fk_ir_ing')
 
@@ -62,7 +62,7 @@ class VReceta(models.Model):
     fk_vr_rec = models.OneToOneField(
         Receta, models.DO_NOTHING, db_column='fk_vr_rec', primary_key=True)
     fk_vr_v = models.ForeignKey(
-        'Variedad', models.DO_NOTHING, db_column='fk_vr_v')
+        Variedad, models.DO_NOTHING, db_column='fk_vr_v')
 
     class Meta:
         managed = True

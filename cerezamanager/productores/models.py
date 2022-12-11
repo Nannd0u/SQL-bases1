@@ -29,7 +29,7 @@ class Ciudad(models.Model):
     ciu_id = models.IntegerField(primary_key=True)
     ciu_nom = models.CharField(max_length=255)
     fk_ciu_pais = models.ForeignKey(
-        'Pais', models.DO_NOTHING, db_column='fk_ciu_pais')
+        Pais, models.DO_NOTHING, db_column='fk_ciu_pais')
 
     class Meta:
         managed = True
@@ -54,7 +54,7 @@ class Asociacion(models.Model):
     asoc_nom = models.CharField(max_length=255)
     asoc_dir = models.CharField(max_length=255)
     fk_asoc_reg = models.ForeignKey(
-        'Region', models.DO_NOTHING, db_column='fk_asoc_reg')
+        Region, models.DO_NOTHING, db_column='fk_asoc_reg')
 
     class Meta:
         managed = True
@@ -86,9 +86,9 @@ class Cultivo(models.Model):
     cult_periodofin = models.DateField()
     cult_destexport = models.IntegerField()
     fk_cult_v = models.ForeignKey(
-        'Variedad', models.DO_NOTHING, db_column='fk_cult_v')
+        Variedad, models.DO_NOTHING, db_column='fk_cult_v')
     fk_cult_p = models.ForeignKey(
-        'Productor', models.DO_NOTHING, db_column='fk_cult_p')
+        Productor, models.DO_NOTHING, db_column='fk_cult_p')
 
     class Meta:
         managed = True
@@ -102,7 +102,7 @@ class Produccion(models.Model):
     prod_logradakg = models.DecimalField(
         max_digits=65535, decimal_places=65535)
     fk_prod_v = models.ForeignKey(
-        'Variedad', models.DO_NOTHING, db_column='fk_prod_v')
+        Variedad, models.DO_NOTHING, db_column='fk_prod_v')
     fk_prod_cult = models.ForeignKey(
         Cultivo, models.DO_NOTHING, db_column='fk_prod_cult')
 
@@ -145,11 +145,11 @@ class Apadrinamiento(models.Model):
     # This field type is a guess.
     ap_aporte = models.TextField(blank=True, null=True)
     fk_ap_pad = models.OneToOneField(
-        'Padrino', models.DO_NOTHING, db_column='fk_ap_pad', primary_key=True)
+        Padrino, models.DO_NOTHING, db_column='fk_ap_pad', primary_key=True)
     fk_ap_p = models.ForeignKey(
-        'Productor', models.DO_NOTHING, db_column='fk_ap_p')
+        Productor, models.DO_NOTHING, db_column='fk_ap_p')
     fk_ap_v = models.ForeignKey(
-        'Variedad', models.DO_NOTHING, db_column='fk_ap_v')
+        Variedad, models.DO_NOTHING, db_column='fk_ap_v')
 
     class Meta:
         managed = True
@@ -159,9 +159,9 @@ class Apadrinamiento(models.Model):
 
 class PProv(models.Model):
     fk_pp_p = models.OneToOneField(
-        'Productor', models.DO_NOTHING, db_column='fk_pp_p', primary_key=True)
+        Productor, models.DO_NOTHING, db_column='fk_pp_p', primary_key=True)
     fk_pp_prov = models.ForeignKey(
-        'Proveedor', models.DO_NOTHING, db_column='fk_pp_prov')
+        Proveedor, models.DO_NOTHING, db_column='fk_pp_prov')
 
     class Meta:
         managed = True

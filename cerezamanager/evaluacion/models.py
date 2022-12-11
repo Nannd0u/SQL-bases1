@@ -23,7 +23,7 @@ class Formula(models.Model):
     fk_for_cli = models.ForeignKey(
         Cliente, models.DO_NOTHING, db_column='fk_for_cli')
     fk_for_var = models.ForeignKey(
-        'Variable', models.DO_NOTHING, db_column='fk_for_var')
+        Variable, models.DO_NOTHING, db_column='fk_for_var')
 
     class Meta:
         managed = True
