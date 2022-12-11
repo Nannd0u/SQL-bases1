@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'cerezamanager',
         'USER': 'postgres',
         'PASSWORD': 'postgrespw',
-        'HOSt': 'host.docker.internal',
+        'HOST': 'host.docker.internal',
         'PORT': '49153',
     }
 }
