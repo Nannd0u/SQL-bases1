@@ -286,8 +286,10 @@ CREATE TABLE Resultado_Eval_Anual(
     rea_fecha       DATE                NOT NULL,
     rea_decision    VARCHAR(255)        NOT NULL,
     fk_rea_cli      INT                 NOT NULL,
-    PRIMARY KEY     (rea_year, fk_rea_cli),
+    fk_rea_p        INT                 NOT NULL,
+    PRIMARY KEY     (rea_year, fk_rea_cli, fk_rea_p),
     FOREIGN KEY     (fk_rea_cli)        REFERENCES  Cliente(cli_id),
+    FOREIGN KEY     (fk_rea_p)          REFERENCES  Productor(p_id),
     CONSTRAINT      chk_rea_porc        CHECK (rea_porc >= 0 AND rea_porc <= 100),
     CONSTRAINT      chk_rea_decision    CHECK (rea_decision IN ('Aceptado', 'Rechazado'))
 );
