@@ -76,7 +76,11 @@ WSGI_APPLICATION = 'cerezamanager.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'cerezamanager',
+        'USER': 'postgres',
+        'PASSWORD': 'postgrespw',
+        'HOSt': 'host.docker.internal',
+        'PORT': '49153',
     }
 }
 
