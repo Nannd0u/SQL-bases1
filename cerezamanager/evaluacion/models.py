@@ -21,9 +21,9 @@ class Formula(models.Model):
     for_tipo = models.CharField(max_length=255)
     for_import = models.TextField()  # This field type is a guess.
     fk_for_cli = models.ForeignKey(
-        Cliente, models.DO_NOTHING, db_column='fk_for_cli')
+        Cliente, on_delete=models.CASCADE, db_column='fk_for_cli')
     fk_for_var = models.ForeignKey(
-        Variable, models.DO_NOTHING, db_column='fk_for_var')
+        Variable, on_delete=models.CASCADE, db_column='fk_for_var')
 
     class Meta:
         managed = True
@@ -38,11 +38,11 @@ class ResultadoEvalAnual(models.Model):
     rea_fecha = models.DateField()
     rea_decision = models.CharField(max_length=255)
     fk_rea_cli = models.ForeignKey(
-        Cliente, models.DO_NOTHING, db_column='fk_rea_cli')
+        Cliente, on_delete=models.CASCADE, db_column='fk_rea_cli')
     fk_rea_p = models.ForeignKey(
-        Productor, models.DO_NOTHING, db_column='fk_rea_p')
+        Productor, on_delete=models.CASCADE, db_column='fk_rea_p')
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'resultado_eval_anual'
         unique_together = (('rea_year', 'fk_rea_cli', 'fk_rea_p'),)

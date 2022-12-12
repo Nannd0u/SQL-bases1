@@ -29,7 +29,7 @@ class Ciudad(models.Model):
     ciu_id = models.IntegerField(primary_key=True)
     ciu_nom = models.CharField(max_length=255)
     fk_ciu_pais = models.ForeignKey(
-        Pais, models.DO_NOTHING, db_column='fk_ciu_pais')
+        Pais, on_delete=models.CASCADE, db_column='fk_ciu_pais')
 
     class Meta:
         managed = True
@@ -41,7 +41,7 @@ class Region(models.Model):
     reg_id = models.IntegerField(primary_key=True)
     reg_nom = models.CharField(max_length=255)
     fk_reg_pais = models.ForeignKey(
-        Pais, models.DO_NOTHING, db_column='fk_reg_pais')
+        Pais, on_delete=models.CASCADE, db_column='fk_reg_pais')
 
     class Meta:
         managed = True
@@ -54,7 +54,7 @@ class Asociacion(models.Model):
     asoc_nom = models.CharField(max_length=255)
     asoc_dir = models.CharField(max_length=255)
     fk_asoc_reg = models.ForeignKey(
-        Region, models.DO_NOTHING, db_column='fk_asoc_reg')
+        Region, on_delete=models.CASCADE, db_column='fk_asoc_reg')
 
     class Meta:
         managed = True
@@ -66,12 +66,12 @@ class Productor(models.Model):
     p_nom = models.CharField(max_length=255)
     p_dir = models.CharField(max_length=255)
     p_envase = models.CharField(max_length=255)
-    fk_p = models.ForeignKey('self', models.DO_NOTHING,
+    fk_p = models.ForeignKey('self', on_delete=models.CASCADE,
                             db_column='fk_p', blank=True, null=True)
     fk_p_asoc = models.ForeignKey(
-        Asociacion, models.DO_NOTHING, db_column='fk_p_asoc', blank=True, null=True)
+        Asociacion, on_delete=models.CASCADE, db_column='fk_p_asoc', blank=True, null=True)
     fk_p_ciu = models.ForeignKey(
-        Ciudad, models.DO_NOTHING, db_column='fk_p_ciu')
+        Ciudad, on_delete=models.CASCADE, db_column='fk_p_ciu')
 
     class Meta:
         managed = True
@@ -86,9 +86,9 @@ class Cultivo(models.Model):
     cult_periodofin = models.DateField()
     cult_destexport = models.IntegerField()
     fk_cult_v = models.ForeignKey(
-        Variedad, models.DO_NOTHING, db_column='fk_cult_v')
+        Variedad, on_delete=models.CASCADE, db_column='fk_cult_v')
     fk_cult_p = models.ForeignKey(
-        Productor, models.DO_NOTHING, db_column='fk_cult_p')
+        Productor, on_delete=models.CASCADE, db_column='fk_cult_p')
 
     class Meta:
         managed = True
@@ -102,9 +102,9 @@ class Produccion(models.Model):
     prod_logradakg = models.DecimalField(
         max_digits=65535, decimal_places=65535)
     fk_prod_v = models.ForeignKey(
-        Variedad, models.DO_NOTHING, db_column='fk_prod_v')
+        Variedad, on_delete=models.CASCADE, db_column='fk_prod_v')
     fk_prod_cult = models.ForeignKey(
-        Cultivo, models.DO_NOTHING, db_column='fk_prod_cult')
+        Cultivo, on_delete=models.CASCADE, db_column='fk_prod_cult')
 
     class Meta:
         managed = True
@@ -118,7 +118,7 @@ class Proveedor(models.Model):
     prov_negocio = models.CharField(max_length=255)
     prov_dir = models.CharField(max_length=255)
     fk_prov_ciu = models.ForeignKey(
-        Ciudad, models.DO_NOTHING, db_column='fk_prov_ciu')
+        Ciudad, on_delete=models.CASCADE, db_column='fk_prov_ciu')
 
     class Meta:
         managed = True
@@ -132,7 +132,7 @@ class Padrino(models.Model):
     pad_ape = models.CharField(max_length=255)
     pad_seg_ape = models.CharField(max_length=255, blank=True, null=True)
     fk_pad_ciu = models.ForeignKey(
-        Ciudad, models.DO_NOTHING, db_column='fk_pad_ciu')
+        Ciudad, on_delete=models.CASCADE, db_column='fk_pad_ciu')
 
     class Meta:
         managed = True
@@ -145,11 +145,11 @@ class Apadrinamiento(models.Model):
     # This field type is a guess.
     ap_aporte = models.TextField(blank=True, null=True)
     fk_ap_pad = models.OneToOneField(
-        Padrino, models.DO_NOTHING, db_column='fk_ap_pad', primary_key=True)
+        Padrino, on_delete=models.CASCADE, db_column='fk_ap_pad', primary_key=True)
     fk_ap_p = models.ForeignKey(
-        Productor, models.DO_NOTHING, db_column='fk_ap_p')
+        Productor, on_delete=models.CASCADE, db_column='fk_ap_p')
     fk_ap_v = models.ForeignKey(
-        Variedad, models.DO_NOTHING, db_column='fk_ap_v')
+        Variedad, on_delete=models.CASCADE, db_column='fk_ap_v')
 
     class Meta:
         managed = True
@@ -159,9 +159,9 @@ class Apadrinamiento(models.Model):
 
 class PProv(models.Model):
     fk_pp_p = models.OneToOneField(
-        Productor, models.DO_NOTHING, db_column='fk_pp_p', primary_key=True)
+        Productor, on_delete=models.CASCADE, db_column='fk_pp_p', primary_key=True)
     fk_pp_prov = models.ForeignKey(
-        Proveedor, models.DO_NOTHING, db_column='fk_pp_prov')
+        Proveedor, on_delete=models.CASCADE, db_column='fk_pp_prov')
 
     class Meta:
         managed = True
