@@ -1,7 +1,7 @@
 from django.db import models
+from djmoney.models.fields import MoneyField
 
 # Create your models here.
-
 
 class Variedad(models.Model):
     v_id = models.IntegerField(primary_key=True)
@@ -142,8 +142,7 @@ class Padrino(models.Model):
 class Apadrinamiento(models.Model):
     ap_fechaini = models.DateField()
     ap_fechafin = models.DateField(blank=True, null=True)
-    # This field type is a guess.
-    ap_aporte = models.TextField(blank=True, null=True)
+    ap_aporte = MoneyField(max_digits=19, decimal_places=4, null=True, default_currency='USD')
     fk_ap_pad = models.OneToOneField(
         Padrino, on_delete=models.CASCADE, db_column='fk_ap_pad', primary_key=True)
     fk_ap_p = models.ForeignKey(

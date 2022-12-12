@@ -1,4 +1,5 @@
 from django.db import models
+from djmoney.models.fields import MoneyField
 from productores.models import Asociacion, Productor, Ciudad, Cultivo, Pais, PProv, Variedad
 
 # Create your models here.
@@ -37,8 +38,7 @@ class Cliente(models.Model):
 class FormaPago(models.Model):
     fp_id = models.IntegerField(primary_key=True)
     fp_tipo = models.CharField(max_length=255)
-    # This field type is a guess.
-    fp_cant = models.TextField(blank=True, null=True)
+    fp_cant = MoneyField(max_digits=19, decimal_places=4, null=True, default_currency='USD')
     fp_porc = models.SmallIntegerField(blank=True, null=True)
     fp_cuota = models.SmallIntegerField(blank=True, null=True)
     fp_emision = models.DateField(blank=True, null=True)
@@ -57,7 +57,7 @@ class Contrato(models.Model):
     cont_emision = models.DateField()
     cont_vencimiento = models.DateField()
     cont_descuento = models.SmallIntegerField(blank=True, null=True)
-    cont_total = models.TextField()  # This field type is a guess.
+    cont_total = MoneyField(max_digits=19, decimal_places=4, default_currency='USD')
     cont_transporte = models.CharField(max_length=255)
     cont_status = models.CharField(max_length=255)
     fk_cont_cli = models.ForeignKey(
@@ -76,7 +76,7 @@ class Contrato(models.Model):
 class Renovacion(models.Model):
     ren_id = models.IntegerField(primary_key=True)
     ren_renovar = models.DateField()
-    ren_total = models.TextField()  # This field type is a guess.
+    ren_total = MoneyField(max_digits=19, decimal_places=4, default_currency='USD')
     fk_ren_cont1 = models.ForeignKey(
         Contrato, on_delete=models.CASCADE, db_column='fk_ren_cont1')
     fk_ren_cont2 = models.IntegerField()
@@ -92,7 +92,7 @@ class Renovacion(models.Model):
 class Pago(models.Model):
     pag_id = models.IntegerField(primary_key=True)
     pag_fecha = models.DateField()
-    pag_monto = models.TextField()  # This field type is a guess.
+    pag_monto = MoneyField(max_digits=19, decimal_places=4, default_currency='USD')
     fk_pag_cont1 = models.ForeignKey(
         Contrato, on_delete=models.CASCADE, db_column='fk_pag_cont1')
     fk_pag_cont2 = models.IntegerField()
@@ -144,7 +144,7 @@ class PrecioPromedio(models.Model):
     pro_id = models.IntegerField(primary_key=True)
     pro_fechaini = models.DateField()
     pro_fechafin = models.DateField(blank=True, null=True)
-    pro_precio = models.TextField()  # This field type is a guess.
+    pro_precio = MoneyField(max_digits=19, decimal_places=4, default_currency='USD')
     pro_calibre = models.CharField(max_length=255)
     fk_pro_v = models.ForeignKey(
         Variedad, on_delete=models.CASCADE, db_column='fk_pro_v')

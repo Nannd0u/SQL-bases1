@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'transaccion.apps.TransaccionConfig',
     'productores.apps.ProductoresConfig',
     'recetas.apps.RecetasConfig',
+    'djmoney',
 ]
 
 MIDDLEWARE = [

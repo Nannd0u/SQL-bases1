@@ -1,4 +1,5 @@
 from django.db import models
+from djmoney.models.fields import MoneyField
 from productores.models import Productor
 from transaccion.models import Cliente
 
@@ -19,7 +20,7 @@ class Variable(models.Model):
 class Formula(models.Model):
     for_id = models.IntegerField(primary_key=True)
     for_tipo = models.CharField(max_length=255)
-    for_import = models.TextField()  # This field type is a guess.
+    for_import = MoneyField(max_digits=14, decimal_places=2, default_currency='USD')
     fk_for_cli = models.ForeignKey(
         Cliente, on_delete=models.CASCADE, db_column='fk_for_cli')
     fk_for_var = models.ForeignKey(
