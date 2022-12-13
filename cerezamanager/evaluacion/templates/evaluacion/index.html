@@ -1,0 +1,12 @@
+<h2>Escoja un productor</h2>
+
+{% if latest_productor_list %}
+    <ul>
+    {% for productor in latest_productor_list %}
+        <li><a href="/evaluacion/{{ productor.p_id }}">{{ productor.p_nom }}</a></li>
+    {% endfor %}
+    </ul>
+    <input type="button" value="Volver" onclick="history.back(-1)"/>
+    {% else %}
+    <p>No hay productores con evaluaciones para visualizar.</p>
+{% endif %}

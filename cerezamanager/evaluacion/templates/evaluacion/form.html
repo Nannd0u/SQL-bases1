@@ -1,0 +1,21 @@
+<form action="{% url 'evaluacion:resultados' productor.p_id %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend><h2>Evaluacion de {{ productor.p_nom }}</h2></legend>
+        {% if error_message %}
+            <p><strong>{{ error_message }}</strong></p>
+        {% endif %}
+        <input 
+            type="radio"
+            name="choice"
+            id="1"
+            value="1"
+        >
+        <label for="1">¿El productor cumplio lo establecido en el contrato?</label>
+        <br>
+        <br>
+        <br>
+        <input type="submit" value="Completado">
+        <input type="button" value="Volver" onclick="history.back(-1)">
+    </fieldset>
+</form>
