@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
 from productores.models import Productor
-from django.http import HttpResponse
 from .models import ResultadoEvalAnual
 
 # Create your views here.
@@ -20,10 +19,18 @@ def form(request, productor_id):
     productor = get_object_or_404(Productor, pk=productor_id)
     return render(request, 'evaluacion/form.html', {'productor': productor})
 
-# pagina que muestra los resultados de evaluaciones de un productor
-def resultados(request, rea_id):
-    return HttpResponse("You're looking at the results of question %s." % rea_id)
-    """rea = get_object_or_404(ResultadoEvalAnual, pk=rea_id)
-    try:
-        selected_choice = rea.choice_set.get(pk=request.POST['choice'])
-    except (KeyError):"""
+# pagina que muestra todos los ResultadoEvalAnual de un productor
+def registro(request, productor_id):
+    productor = get_object_or_404(Productor, pk=productor_id)
+    latest_rea_list = ResultadoEvalAnual.objects.raw(
+        'SELECT rea_year, rea_valor, rea_porc, rea_fecha, rea_decision, Cliente.cli_nom '+
+        'FROM Resultado_Eval_Anual '+
+        'INNER JOIN Cliente ON Resultado_Eval_Anual.fk_rea_cli = Cliente.cli_id '+
+        'WHERE fk_rea_p = %s',[productor_id])
+    return render(request, 'evaluacion/registro.html', 
+        {'productor': productor,
+        'latest_rea_list': latest_rea_list})
+
+def resultados(request, productor_id):
+    productor = get_object_or_404(Productor, pk=productor_id)
+    return render(request, 'evaluacion/resultados.html', {'productor': productor})
